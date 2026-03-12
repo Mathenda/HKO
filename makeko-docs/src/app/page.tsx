@@ -172,7 +172,7 @@ export default function HomePage() {
 
       {/*  Stats  */}
       <section className="border-y border-border mb-24">
-        <div className="grid grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 lg:grid-cols-5">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -188,6 +188,21 @@ export default function HomePage() {
               <div className="label-caps">{stat.label}</div>
             </motion.div>
           ))}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: stats.length * 0.08 }}
+            className="text-center py-12 border-l border-border flex flex-col items-center justify-center"
+          >
+            <div className="text-5xl lg:text-6xl font-light text-text mb-3">
+              IID
+            </div>
+            <div className="label-caps text-sm">Member</div>
+            <p className="text-xs text-text-dim mt-2 max-w-[140px] leading-relaxed">
+              African Institute of Interior Design Professions
+            </p>
+          </motion.div>
         </div>
       </section>
 
