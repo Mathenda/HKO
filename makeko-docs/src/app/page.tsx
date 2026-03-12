@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
@@ -100,87 +100,73 @@ export default function HomePage() {
     <Layout>
 
       {/*  Hero  */}
-      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden -mx-6 lg:-mx-12 -mt-8 lg:-mt-12 mb-24">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&q=80)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "brightness(0.32) saturate(0.75)",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to top, rgba(10,10,10,0.99) 0%, rgba(10,10,10,0.65) 45%, rgba(10,10,10,0.12) 100%)",
-          }}
-        />
-
-        <div className="relative z-10 w-full px-6 lg:px-12 pb-24 pt-48">
+      <section className="-mx-6 lg:-mx-12 -mt-8 lg:-mt-12 mb-24 min-h-screen flex flex-col lg:flex-row">
+        {/* Text half */}
+        <div className="flex flex-col justify-center px-8 lg:px-16 py-32 pt-32 lg:pt-24 bg-background w-full lg:w-1/2">
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="label-caps text-primary mb-6 tracking-[0.35em]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="label-caps mb-10"
           >
-            Established 2018 &middot; Johannesburg
+            Est. 2018 &middot; Johannesburg
           </motion.p>
 
-          <motion.div
-            initial={{ scaleX: 0, originX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="w-full h-px bg-border mb-8"
-          />
-
           <motion.h1
-            initial={{ opacity: 0, y: 28 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
-            className="font-display text-[clamp(4rem,12vw,9rem)] font-light text-text leading-[0.88] tracking-tight mb-8"
+            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+            className="text-[clamp(3.5rem,6vw,6rem)] font-light text-text leading-[0.94] tracking-tight mb-8"
           >
             Makeko
             <br />
-            <span className="italic text-text-muted">Interiors</span>
+            Interiors
           </motion.h1>
 
           <motion.div
             initial={{ scaleX: 0, originX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.55, ease: "easeOut" }}
-            className="w-full h-px bg-border mb-8"
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="w-8 h-px bg-border mb-8"
           />
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.75 }}
-            className="text-text-muted text-base max-w-lg leading-relaxed font-light mb-12"
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-text-muted text-sm max-w-xs leading-relaxed mb-12"
           >
             A forward-thinking interior design studio dedicated to delivering
             technically sound, creative, and functional interior environments.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.95 }}
-            className="flex flex-wrap gap-0.5"
+            transition={{ duration: 0.5, delay: 0.65 }}
+            className="flex flex-wrap gap-2"
           >
             <Link href="/portfolio">
-              <button className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-background text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-primary-muted transition-colors duration-200">
+              <button className="inline-flex items-center gap-3 px-7 py-3.5 bg-text text-background text-[11px] tracking-[0.12em] uppercase font-medium hover:bg-text/80 transition-colors duration-200">
                 View Portfolio
-                <ArrowRight size={14} />
+                <ArrowRight size={13} />
               </button>
             </Link>
             <Link href="/contact">
-              <button className="inline-flex items-center px-8 py-4 border border-border/50 text-text-muted text-[11px] tracking-[0.2em] uppercase font-light hover:border-text-muted hover:text-text transition-all duration-200">
+              <button className="inline-flex items-center px-7 py-3.5 border border-border text-text-muted text-[11px] tracking-[0.12em] uppercase font-light hover:border-text hover:text-text transition-all duration-200">
                 Get in Touch
               </button>
             </Link>
           </motion.div>
+        </div>
+
+        {/* Image half */}
+        <div className="hidden lg:block relative flex-1 overflow-hidden min-h-full">
+          <img
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80"
+            alt="Interior space"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
         </div>
       </section>
 
@@ -196,7 +182,7 @@ export default function HomePage() {
               transition={{ duration: 0.4, delay: index * 0.08 }}
               className={`text-center py-12 ${index > 0 ? "border-l border-border" : ""}`}
             >
-              <div className="font-display text-5xl lg:text-6xl font-light text-primary mb-3">
+              <div className="text-5xl lg:text-6xl font-light text-text mb-3">
                 {stat.value}
               </div>
               <div className="label-caps">{stat.label}</div>
@@ -213,11 +199,11 @@ export default function HomePage() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="label-caps text-primary mb-4 tracking-[0.28em]">Our Philosophy</p>
-          <h2 className="font-display text-4xl lg:text-5xl font-light text-text mb-6 leading-tight">
+          <p className="label-caps mb-4">Our Philosophy</p>
+          <h2 className="text-4xl lg:text-5xl font-light text-text mb-6 leading-tight tracking-tight">
             Where precision meets<br />creative vision
           </h2>
-          <div className="w-10 h-px bg-primary mb-8" />
+          <div className="w-8 h-px bg-border mb-8" />
           <p className="text-text-muted leading-relaxed mb-8 font-light text-sm lg:text-base">
             We approach every project with a balance of creativity and precision,
             ensuring that every detail  from spatial planning to material specification 
@@ -231,7 +217,7 @@ export default function HomePage() {
               "Buildability and practical implementation focus",
             ].map((item) => (
               <li key={item} className="flex items-center gap-4">
-                <span className="w-1.5 h-1.5 bg-primary flex-shrink-0" />
+                <span className="w-1.5 h-1.5 bg-text-dim shrink-0" />
                 <span className="text-text-muted text-sm font-light leading-relaxed">{item}</span>
               </li>
             ))}
@@ -243,23 +229,21 @@ export default function HomePage() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="relative h-[500px] overflow-hidden"
+          className="relative h-125 overflow-hidden"
         >
           <img
             src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&q=80"
             alt="Modern interior design"
             className="w-full h-full object-cover"
           />
-          <div className="absolute top-5 left-5 w-14 h-14 border-t-2 border-l-2 border-primary/50" />
-          <div className="absolute bottom-5 right-5 w-14 h-14 border-b-2 border-r-2 border-primary/50" />
         </motion.div>
       </section>
 
       {/*  Services  */}
       <section className="mb-24">
         <div className="mb-14">
-          <p className="label-caps text-primary mb-4 tracking-[0.28em]">What We Do</p>
-          <h2 className="font-display text-4xl lg:text-5xl font-light text-text">Services</h2>
+          <p className="label-caps mb-4">What We Do</p>
+          <h2 className="text-4xl lg:text-5xl font-light text-text tracking-tight">Services</h2>
         </div>
 
         <div className="border-t border-border">
@@ -275,10 +259,10 @@ export default function HomePage() {
               <Link href={service.href}>
                 <div className="flex items-center justify-between py-6 lg:py-8">
                   <div className="flex items-center gap-6 lg:gap-14">
-                    <span className="text-[11px] text-primary tracking-widest font-light w-6 flex-shrink-0 tabular-nums">
+                    <span className="text-[11px] text-text-muted font-light w-6 shrink-0 tabular-nums">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="font-display text-xl lg:text-3xl font-light text-text group-hover:text-primary transition-colors duration-200">
+                    <h3 className="text-xl lg:text-2xl font-light text-text group-hover:text-text-muted transition-colors duration-200">
                       {service.name}
                     </h3>
                   </div>
@@ -288,7 +272,7 @@ export default function HomePage() {
                     </p>
                     <ArrowRight
                       size={17}
-                      className="text-text-dim group-hover:text-primary group-hover:translate-x-1 transition-all duration-200 flex-shrink-0"
+                      className="text-text-dim group-hover:text-text group-hover:translate-x-1 transition-all duration-200 shrink-0"
                     />
                   </div>
                 </div>
@@ -302,14 +286,14 @@ export default function HomePage() {
       <section className="mb-24">
         <div className="mb-12 flex items-end justify-between">
           <div>
-            <p className="label-caps text-primary mb-3 tracking-[0.28em]">Selected Work</p>
-            <h2 className="font-display text-4xl lg:text-5xl font-light text-text">
+            <p className="label-caps mb-3">Selected Work</p>
+            <h2 className="text-4xl lg:text-5xl font-light text-text tracking-tight">
               Recent Projects
             </h2>
           </div>
           <Link
             href="/portfolio"
-            className="hidden lg:flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase text-text-muted hover:text-primary transition-colors duration-200"
+            className="hidden lg:flex items-center gap-2 text-[11px] tracking-widest uppercase text-text-muted hover:text-text transition-colors duration-200"
           >
             View All <ArrowRight size={11} />
           </Link>
@@ -336,10 +320,10 @@ export default function HomePage() {
       {/*  Portfolio Sectors  */}
       <section className="mb-24">
         <div className="mb-14">
-          <p className="label-caps text-primary mb-4 tracking-[0.28em]">Expertise</p>
-          <h2 className="font-display text-4xl lg:text-5xl font-light text-text">Portfolio</h2>
+          <p className="label-caps mb-4">Expertise</p>
+          <h2 className="text-4xl lg:text-5xl font-light text-text tracking-tight">Portfolio</h2>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-0.5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-0.5 text-white">
           {sectors.map((sector, index) => (
             <motion.div
               key={sector.name}
@@ -356,19 +340,18 @@ export default function HomePage() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div
-                    className="absolute inset-0"
+                    className="absolute inset-0 transition-opacity duration-300"
                     style={{
                       background:
-                        "linear-gradient(to top, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.3) 50%, rgba(10,10,10,0.05) 100%)",
+                        "linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.2) 55%, transparent 100%)",
                     }}
                   />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="label-caps text-primary mb-2">{sector.count} projects</p>
-                    <h3 className="font-display text-2xl font-light text-text group-hover:text-primary transition-colors duration-200">
+                    <p className="label-caps text-white mb-1.5">{sector.count} projects</p>
+                    <h3 className="text-xl font-light text-white">
                       {sector.name}
                     </h3>
                   </div>
-                  <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </Link>
             </motion.div>
@@ -385,10 +368,10 @@ export default function HomePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="label-caps text-primary mb-8 tracking-[0.28em]">Client Voices</p>
-            <Quote size={36} className="text-primary/15 mb-6" />
+<p className="label-caps mb-8">Client Voices</p>
+          <Quote size={32} className="text-text-dim mb-6" />
 
-            <div className="relative min-h-[220px]">
+            <div className="relative min-h-55">
               {testimonials.map((t, i) => (
                 <motion.div
                   key={t.author}
@@ -404,11 +387,11 @@ export default function HomePage() {
                       : "absolute inset-0 pointer-events-none"
                   }`}
                 >
-                  <p className="font-display text-2xl lg:text-3xl font-light italic text-text leading-relaxed mb-8">
+                  <p className="text-2xl lg:text-3xl font-light text-text leading-relaxed mb-8">
                     &ldquo;{t.quote}&rdquo;
                   </p>
                   <div className="flex items-center gap-4">
-                    <div className="w-8 h-px bg-primary" />
+                    <div className="w-8 h-px bg-border" />
                     <div>
                       <div className="text-sm font-medium text-text">{t.author}</div>
                       <div className="label-caps mt-1">{t.role}</div>
@@ -425,7 +408,7 @@ export default function HomePage() {
                   onClick={() => setCurrentTestimonial(i)}
                   className={`h-px transition-all duration-300 ${
                     i === currentTestimonial
-                      ? "w-8 bg-primary"
+                      ? "w-8 bg-text"
                       : "w-4 bg-border hover:bg-text-dim"
                   }`}
                   aria-label={`Testimonial ${i + 1}`}
@@ -439,14 +422,13 @@ export default function HomePage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative h-[480px] overflow-hidden"
+            className="relative h-120 overflow-hidden"
           >
             <img
               src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=800&q=80"
               alt="Beautiful interior space"
               className="w-full h-full object-cover"
             />
-            <div className="absolute top-5 left-5 w-14 h-14 border-t-2 border-l-2 border-primary/40" />
           </motion.div>
         </div>
       </section>
@@ -455,11 +437,11 @@ export default function HomePage() {
       <section className="mt-24 mb-0 pt-24 border-t border-border">
         <div className="grid lg:grid-cols-2 gap-16">
           <div>
-            <p className="label-caps text-primary mb-4 tracking-[0.28em]">Design Philosophy</p>
-            <h2 className="font-display text-4xl lg:text-5xl font-light text-text mb-6 leading-tight">
+            <p className="label-caps mb-4">Design Philosophy</p>
+            <h2 className="text-4xl lg:text-5xl font-light text-text mb-6 leading-tight tracking-tight">
               What guides our work
             </h2>
-            <div className="w-10 h-px bg-primary mb-8" />
+            <div className="w-8 h-px bg-border mb-8" />
             <p className="text-text-muted leading-relaxed mb-10 font-light text-sm lg:text-base">
               Successful interior environments must respond to human experience and
               functionality while being supported by strong technical detailing and
@@ -473,7 +455,7 @@ export default function HomePage() {
                 { label: "Material Specification", desc: "Curated material palettes aligned with brief and budget" },
               ].map((item) => (
                 <div key={item.label} className="p-5 bg-surface border border-border">
-                  <div className="w-4 h-px bg-primary mb-4" />
+                  <div className="w-4 h-px bg-border mb-4" />
                   <div className="text-sm font-medium text-text mb-2 tracking-wide">{item.label}</div>
                   <p className="text-xs text-text-muted leading-relaxed font-light">{item.desc}</p>
                 </div>
@@ -494,9 +476,9 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.4 }}
-                className="p-6 border border-border bg-surface flex flex-col justify-between min-h-[140px]"
+                className="p-6 border border-border bg-surface flex flex-col justify-between min-h-35"
               >
-                <span className="text-[11px] text-primary tracking-widest tabular-nums">
+                <span className="text-[11px] text-text-dim font-light tabular-nums">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <p className="text-sm text-text-muted font-light leading-relaxed mt-auto">{item}</p>
@@ -507,42 +489,22 @@ export default function HomePage() {
       </section>
 
       {/*  CTA  */}
-      <section className="relative overflow-hidden -mx-6 lg:-mx-12 mt-24 min-h-[520px] flex items-center">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=80)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "brightness(0.22) saturate(0.65)",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(10,10,10,0.98) 0%, rgba(10,10,10,0.78) 50%, rgba(10,10,10,0.4) 100%)",
-          }}
-        />
-        <div className="relative z-10 px-6 lg:px-12 py-24">
-          <p className="label-caps text-primary mb-6 tracking-[0.35em]">Start A Project</p>
-          <h3 className="font-display text-5xl lg:text-7xl font-light text-text mb-4 leading-tight">
-            Let&apos;s Create
-            <br />
-            <span className="italic text-text-muted">Beautiful Spaces</span>
-          </h3>
-          <div className="w-16 h-px bg-primary mb-8" />
-          <p className="text-text-muted mb-10 max-w-md leading-relaxed font-light text-sm lg:text-base">
-            Ready to start your project? Get in touch to discuss how we can
-            help bring your vision to life with technical precision and creative excellence.
-          </p>
-          <Link href="/contact">
-            <button className="group inline-flex items-center gap-4 px-8 py-4 border border-border/60 text-text text-[11px] tracking-[0.2em] uppercase font-light hover:border-primary hover:text-primary transition-all duration-300">
-              Enquire Now
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
-            </button>
-          </Link>
-        </div>
+      <section className="-mx-6 lg:-mx-12 mt-24 bg-text px-8 lg:px-16 py-24">
+        <p className="label-caps text-background/40 mb-8">Start A Project</p>
+        <h3 className="text-5xl lg:text-6xl font-light text-background mb-6 leading-tight tracking-tight">
+          Let&apos;s create<br />beautiful spaces.
+        </h3>
+        <div className="w-8 h-px bg-background/20 mb-8" />
+        <p className="text-background/55 mb-10 max-w-md leading-relaxed font-light text-sm">
+          Ready to start your project? Get in touch to discuss how we can
+          help bring your vision to life with technical precision and creative excellence.
+        </p>
+        <Link href="/contact">
+          <button className="group inline-flex items-center gap-4 px-7 py-3.5 border border-background/25 text-background text-[11px] tracking-[0.12em] uppercase font-light hover:border-background/60 transition-all duration-300">
+            Enquire Now
+            <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-200" />
+          </button>
+        </Link>
       </section>
 
     </Layout>

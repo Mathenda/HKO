@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  /* Luxury editorial palette — deep black & champagne gold */
-  --background: #0a0a0a;
-  --background-secondary: #111111;
-  --surface: #161616;
-  --surface-hover: #1e1e1e;
-  --primary: #c9a96e;
-  --primary-muted: #b8916a;
-  --secondary: #e8d5b7;
-  --accent: #c9a96e;
-  --text: #f5f0eb;
-  --text-muted: #8a7f74;
-  --text-dim: #5a5047;
-  --border: #222222;
-  --border-light: #333333;
+  /* Simple, abstract palette — off-white & near-black */
+  --background: #f9f9f7;
+  --background-secondary: #f2f2f0;
+  --surface: #ebebea;
+  --surface-hover: #e2e2e0;
+  --primary: #111111;
+  --primary-muted: #333333;
+  --secondary: #555555;
+  --accent: #111111;
+  --text: #111111;
+  --text-muted: #6b6b6b;
+  --text-dim: #b5b5b5;
+  --border: #dedede;
+  --border-light: #eeeeee;
 
   --sidebar-width: 260px;
 
@@ -22,13 +22,9 @@
   --radius-md: 0px;
   --radius-lg: 2px;
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.6);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.7);
-  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.8);
-
-  --gradient-primary: linear-gradient(135deg, #c9a96e 0%, #b8916a 100%);
-  --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #161616 100%);
-  --gradient-surface: linear-gradient(135deg, #161616 0%, #1e1e1e 100%);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.1);
 }
 
 @theme inline {
@@ -83,9 +79,9 @@ body {
 /* Small caps label style */
 .label-caps {
   font-size: 10px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  color: var(--text-muted);
   font-weight: 400;
 }
 
@@ -138,7 +134,7 @@ body {
 .image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 10, 0.95) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.55) 100%);
   opacity: 0;
   transition: opacity 0.35s ease;
 }
@@ -172,8 +168,8 @@ body {
 }
 
 .gallery-mosaic > div:hover img {
-  transform: scale(1.04);
-  filter: brightness(0.85);
+  transform: scale(1.03);
+  filter: brightness(0.92);
 }
 
 @media (max-width: 768px) {

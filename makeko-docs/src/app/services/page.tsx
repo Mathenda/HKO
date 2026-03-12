@@ -162,7 +162,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-text-muted max-w-2xl mx-auto leading-relaxed"
+            className="text-xl text-text-muted max-w-2xl mx-auto leading-relaxed text-white"
           >
             Comprehensive interior design services covering every aspect from initial
             concept through to final installation.

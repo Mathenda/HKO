@@ -256,7 +256,7 @@ export default function FounderPage() {
             <h2 className="text-2xl font-semibold text-text mb-3">Sector Expertise</h2>
             <p className="text-text-muted">Diverse project experience</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
             {experience.map((item, index) => (
               <motion.div
                 key={item.sector}

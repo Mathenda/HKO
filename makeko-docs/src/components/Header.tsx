@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -43,21 +43,21 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 h-[72px] z-40 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 h-18 z-40 transition-all duration-300 ${
           scrolled
-            ? "bg-background/96 backdrop-blur-md border-b border-border"
-            : "bg-transparent border-b border-white/5"
+            ? "bg-background/95 backdrop-blur-sm border-b border-border"
+            : "bg-background/80 border-b border-border/30"
         }`}
       >
         <div className="h-full px-6 lg:px-12">
           <div className="flex items-center justify-between h-full">
 
             {/* Brand */}
-            <Link href="/" className="flex flex-col leading-[1.1]">
-              <span className="font-display text-[22px] font-light tracking-[0.08em] text-text">
+            <Link href="/" className="flex flex-col leading-[1.15]">
+              <span className="text-[18px] font-light tracking-[0.04em] text-text">
                 Makeko
               </span>
-              <span className="text-[9px] tracking-[0.35em] uppercase text-primary font-light">
+              <span className="text-[9px] tracking-[0.22em] uppercase text-text-muted font-light">
                 Interiors
               </span>
             </Link>
@@ -74,9 +74,9 @@ export default function Header() {
                             openDropdown === item.name ? null : item.name
                           )
                         }
-                        className={`flex items-center gap-1.5 text-[11px] tracking-[0.18em] uppercase font-light transition-colors duration-200 ${
+                      className={`flex items-center gap-1.5 text-[11px] tracking-widest uppercase font-light transition-colors duration-200 ${
                           pathname.startsWith(item.href)
-                            ? "text-primary"
+                            ? "text-text"
                             : "text-text-muted hover:text-text"
                         }`}
                       >
@@ -95,15 +95,15 @@ export default function Header() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 6 }}
                             transition={{ duration: 0.18 }}
-                            className="absolute top-full left-0 mt-3 py-1 bg-background border border-border min-w-[160px]"
+                            className="absolute top-full left-0 mt-3 py-1 bg-background border border-border shadow-md min-w-40"
                           >
                             {item.children.map((child) => (
                               <Link
                                 key={child.name}
                                 href={child.href}
-                                className={`block px-5 py-3 text-[10px] tracking-[0.18em] uppercase font-light transition-colors ${
+                                className={`block px-5 py-3 text-[10px] tracking-widest uppercase font-light transition-colors ${
                                   pathname === child.href
-                                    ? "text-primary"
+                                    ? "text-text"
                                     : "text-text-muted hover:text-text hover:bg-surface"
                                 }`}
                               >
@@ -117,15 +117,15 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`relative text-[11px] tracking-[0.18em] uppercase font-light transition-colors duration-200 ${
+                      className={`relative text-[11px] tracking-widest uppercase font-light transition-colors duration-200 ${
                         pathname === item.href
-                          ? "text-primary"
+                          ? "text-text"
                           : "text-text-muted hover:text-text"
                       }`}
                     >
                       {item.name}
                       {pathname === item.href && (
-                        <span className="absolute -bottom-1 left-0 right-0 h-px bg-primary" />
+                        <span className="absolute -bottom-1 left-0 right-0 h-px bg-text" />
                       )}
                     </Link>
                   )}
@@ -137,7 +137,7 @@ export default function Header() {
             <div className="flex items-center gap-4">
               <Link
                 href="/contact"
-                className="hidden lg:inline-flex items-center px-5 py-2.5 bg-primary text-background text-[10px] tracking-[0.2em] uppercase font-medium hover:bg-primary-muted transition-colors duration-200"
+                className="hidden lg:inline-flex items-center px-5 py-2.5 bg-text text-background text-[10px] tracking-[0.12em] uppercase font-medium hover:bg-text/80 transition-colors duration-200"
               >
                 Start a Project
               </Link>
@@ -160,15 +160,15 @@ export default function Header() {
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.32, ease: [0.32, 0, 0.67, 0] }}
+            transition={{ duration: 0.28, ease: [0.32, 0, 0.67, 0] }}
             className="fixed inset-0 z-50 bg-background flex flex-col"
           >
-            <div className="flex items-center justify-between h-[72px] px-6 border-b border-border">
-              <Link href="/" onClick={() => setIsMenuOpen(false)} className="flex flex-col leading-[1.1]">
-                <span className="font-display text-[22px] font-light tracking-[0.08em] text-text">
+            <div className="flex items-center justify-between h-18 px-6 border-b border-border">
+              <Link href="/" onClick={() => setIsMenuOpen(false)} className="flex flex-col leading-[1.15]">
+                <span className="text-[18px] font-light tracking-[0.04em] text-text">
                   Makeko
                 </span>
-                <span className="text-[9px] tracking-[0.35em] uppercase text-primary font-light">
+                <span className="text-[9px] tracking-[0.22em] uppercase text-text-muted font-light">
                   Interiors
                 </span>
               </Link>
@@ -186,13 +186,13 @@ export default function Header() {
                   key={item.name}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.06, duration: 0.3 }}
+                  transition={{ delay: i * 0.05, duration: 0.25 }}
                 >
                   <Link
                     href={item.href}
-                    className={`block py-5 border-b border-border text-[13px] tracking-[0.18em] uppercase font-light transition-colors ${
+                    className={`block py-5 border-b border-border text-[13px] tracking-widest uppercase font-light transition-colors ${
                       pathname === item.href || pathname.startsWith(item.href + "/")
-                        ? "text-primary"
+                        ? "text-text"
                         : "text-text-muted hover:text-text"
                     }`}
                   >
@@ -206,7 +206,7 @@ export default function Header() {
                           href={child.href}
                           className={`block py-3.5 border-b border-border/40 text-[11px] tracking-[0.15em] uppercase font-light transition-colors ${
                             pathname === child.href
-                              ? "text-primary"
+                              ? "text-text"
                               : "text-text-dim hover:text-text-muted"
                           }`}
                         >
@@ -222,7 +222,7 @@ export default function Header() {
             <div className="p-6 border-t border-border">
               <Link
                 href="/contact"
-                className="block text-center text-[11px] tracking-[0.22em] uppercase text-background bg-primary py-4 font-medium hover:bg-primary-muted transition-colors"
+                className="block text-center text-[11px] tracking-[0.12em] uppercase text-background bg-text py-4 font-medium hover:bg-text/80 transition-colors"
               >
                 Start a Project
               </Link>

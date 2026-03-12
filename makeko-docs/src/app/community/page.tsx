@@ -61,7 +61,6 @@ export default function CommunityPage() {
                 alt="Youth empowerment"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-background to-transparent" />
             </div>
             <div className="p-8 lg:p-10">
               <div className="flex items-center gap-3 mb-4">
@@ -179,11 +178,10 @@ export default function CommunityPage() {
             </div>
             <div className="relative h-64 lg:h-auto overflow-hidden order-1 lg:order-2">
               <img
-                src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?w=800&q=80"
+                src="https://images.unsplash.com/photo-1593697821252-0c93697821252-0c9137d9fc45?w=800&q=80"
                 alt="SABC 3 Feature"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-l from-background to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
                 <div className="p-4 bg-surface/90 backdrop-blur-sm rounded-md border border-border">
                   <div className="flex items-center gap-3">

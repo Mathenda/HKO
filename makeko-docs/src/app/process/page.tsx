@@ -92,7 +92,7 @@ const processSteps = [
       "Progress meetings",
       "Snagging and defect resolution",
     ],
-    image: "https://images.unsplash.com/photo-1504306159813-73eb7d843835?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
     icon: Hammer,
   },
   {
