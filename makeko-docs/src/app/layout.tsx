@@ -30,6 +30,10 @@ export const metadata: Metadata = {
     description: "Technical Interior Design Studio",
     type: "website",
   },
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
