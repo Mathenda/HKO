@@ -13,7 +13,7 @@ const sectors = [
     icon: Building2,
     count: 9,
     href: "/portfolio/office",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+    image: "/Office/Office1/Picture9.png",
     color: "primary",
     featured: [
       { name: "Tech Hub Office", location: "Sandton, Johannesburg", year: "2024" },
@@ -26,7 +26,7 @@ const sectors = [
     icon: Store,
     count: 5,
     href: "/portfolio/retail",
-    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80",
+    image: "/Retail/Retail1/Picture23.png",
     color: "secondary",
     featured: [
       { name: "Luxury Boutique", location: "Rosebank, Johannesburg", year: "2024" },
@@ -39,7 +39,7 @@ const sectors = [
     icon: Heart,
     count: 9,
     href: "/portfolio/healthcare",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80",
+    image: "/Health/Health1/Picture38.png",
     color: "accent",
     featured: [
       { name: "Medical Center", location: "Sandton, Johannesburg", year: "2024" },
@@ -52,7 +52,7 @@ const sectors = [
     icon: Home,
     count: 5,
     href: "/portfolio/residential",
-    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80",
+    image: "/Residential/Residential1/Picture54.jpg",
     color: "primary",
     featured: [
       { name: "Modern Apartment", location: "Sandton, Johannesburg", year: "2024" },
@@ -69,7 +69,7 @@ export default function PortfolioPage() {
         <div
           className="hero-bg-image"
           style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&q=80)`,
+            backgroundImage: `url(/Office/Office1/Picture9.png)`,
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">

@@ -2,86 +2,56 @@
 
 import Layout from "@/components/Layout";
 import { Card, Section, Badge } from "@/components/ui";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Heart, ArrowLeft, MapPin, Calendar, Maximize2 } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 const projects = [
   {
-    name: "Medical Center Reception",
-    description: "Welcoming healthcare reception with patient-focused design",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80",
+    name: "Medical Campus Reception",
+    description: "A calm, welcoming reception and waiting space with thoughtful wayfinding.",
+    images: [
+      "/Health/Health1/Picture38.png",
+      "/Health/Health1/Picture39.png",
+      "/Health/Health1/Picture40.png",
+    ],
     location: "Sandton, Johannesburg",
     year: "2024",
     size: "320 sqm",
   },
   {
-    name: "Hospital Duty Station",
-    description: "Efficient nursing station with integrated technology",
-    image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&q=80",
+    name: "Clinical Suite",
+    description: "A functional clinical suite with integrated technology and efficient circulation.",
+    images: [
+      "/Health/Health2/Picture43.png",
+      "/Health/Health2/Picture44.jpg",
+      "/Health/Health2/Picture45.jpg",
+      "/Health/Health2/Picture46.jpg",
+    ],
     location: "Johannesburg",
     year: "2023",
-    size: "180 sqm",
+    size: "620 sqm",
   },
   {
-    name: "Dental Clinic",
-    description: "Modern dental practice with calming patient areas",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80",
-    location: "Pretoria",
-    year: "2024",
-    size: "420 sqm",
-  },
-  {
-    name: "Specialist Consulting Rooms",
-    description: "Professional medical suites with premium finishes",
-    image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&q=80",
-    location: "Rosebank, Johannesburg",
-    year: "2023",
-    size: "280 sqm",
-  },
-  {
-    name: "Pharmacy Interior",
-    description: "Retail pharmacy with optimal customer flow",
-    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&q=80",
-    location: "Sandton, Johannesburg",
-    year: "2024",
-    size: "150 sqm",
-  },
-  {
-    name: "Wellness Clinic",
-    description: "Holistic health center with serene atmosphere",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80",
+    name: "Wellness Hub",
+    description: "A calming wellness interior focused on comfort and patient well-being.",
+    images: [
+      "/Health/Health3/Picture49.png",
+      "/Health/Health3/Picture50.jpg",
+      "/Health/Health3/Picture51.jpg",
+      "/Health/Health3/Picture52.jpg",
+      "/Health/Health3/Picture53.png",
+    ],
     location: "Cape Town",
-    year: "2023",
-    size: "380 sqm",
-  },
-  {
-    name: "Day Surgery Center",
-    description: "Ambulatory surgery facility with patient comfort focus",
-    image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&q=80",
-    location: "Johannesburg",
     year: "2024",
-    size: "650 sqm",
-  },
-  {
-    name: "Medical Laboratory",
-    description: "Clinical laboratory with functional workflow design",
-    image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&q=80",
-    location: "Sandton, Johannesburg",
-    year: "2023",
-    size: "420 sqm",
-  },
-  {
-    name: "Pediatric Clinic",
-    description: "Child-friendly medical space with playful elements",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80",
-    location: "Fourways, Johannesburg",
-    year: "2024",
-    size: "340 sqm",
+    size: "480 sqm",
   },
 ];
 
 export default function HealthcarePortfolioPage() {
+  const [openProject, setOpenProject] = useState<string | null>(null);
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -89,7 +59,7 @@ export default function HealthcarePortfolioPage() {
         <div
           className="hero-bg-image"
           style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80)`,
+            backgroundImage: `url(/Health/Health1/Picture38.png)`,
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">
@@ -146,11 +116,11 @@ export default function HealthcarePortfolioPage() {
               <Card className="h-full p-0 overflow-hidden group">
                 <div className="relative h-56 overflow-hidden">
                   <img
-                    src={project.image}
+                    src={project.images[0]}
                     alt={project.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-linear-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="flex items-center gap-3 text-sm text-text">
                       <span className="flex items-center gap-1">
@@ -166,7 +136,52 @@ export default function HealthcarePortfolioPage() {
                     {project.name}
                   </h3>
                   <p className="text-sm text-text-muted mb-4">{project.description}</p>
-                  <div className="flex items-center justify-between text-xs text-text-dim">
+
+                  <div className="grid grid-cols-3 gap-2 mb-4">
+                    {project.images.slice(0, 3).map((src) => (
+                      <img
+                        key={src}
+                        src={src}
+                        alt={project.name}
+                        className="h-16 w-full object-cover rounded"
+                      />
+                    ))}
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setOpenProject(openProject === project.name ? null : project.name)
+                    }
+                    className="text-xs font-medium text-primary hover:text-primary-muted transition-colors"
+                  >
+                    {openProject === project.name ? "Hide gallery" : "View gallery"}
+                  </button>
+
+                  <AnimatePresence>
+                    {openProject === project.name && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="grid grid-cols-3 gap-2 mt-4">
+                          {project.images.map((src) => (
+                            <img
+                              key={src}
+                              src={src}
+                              alt={`${project.name} gallery`}
+                              className="h-20 w-full object-cover rounded"
+                            />
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  <div className="flex items-center justify-between text-xs text-text-dim mt-4">
                     <span className="flex items-center gap-1">
                       <Calendar size={12} />
                       {project.year}

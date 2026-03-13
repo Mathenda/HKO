@@ -23,104 +23,79 @@ const services = {
   concept: {
     name: "Interior Design Concept Development",
     icon: Palette,
-    description:
-      "We transform ideas into compelling visual narratives through comprehensive concept development.",
-    longDescription:
-      "Our concept development process begins with understanding your vision, brand identity, and functional requirements. We create mood boards, material palettes, and 3D visualizations that bring your space to life before construction begins.",
+    description: "Transforming ideas into compelling visual narratives.",
+    longDescription: "We transform ideas into compelling visual narratives through comprehensive concept development.",
     features: [
-      "Client consultation and briefing analysis",
-      "Concept development and design direction",
+      "Client consultation and briefing",
+      "Concept development",
       "Mood boards and visual storytelling",
       "Material and finishes concepts",
       "3D design visualization",
     ],
     image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80",
-    deliverables: ["Mood boards", "Concept presentations", "3D renderings", "Material samples"],
   },
   planning: {
     name: "Space Planning & Layout",
     icon: Ruler,
-    description:
-      "Strategic spatial solutions that optimize functionality and workflow efficiency.",
-    longDescription:
-      "Effective space planning is the foundation of great interior design. We analyze traffic flow, functional zones, and spatial relationships to create layouts that work seamlessly for your specific needs.",
+    description: "Strategic spatial solutions that optimize functionality.",
+    longDescription: "Effective space planning is the foundation of great interior design. We analyze traffic flow, functional zones, and spatial relationships to create layouts that work seamlessly for your specific needs.",
     features: [
-      "Layout strategies and spatial analysis",
-      "Functional planning and zoning",
-      "Workflow optimization",
-      "Circulation and accessibility planning",
-      "Furniture and equipment layouts",
+      "Layout strategies",
+      "Functional planning",
+      "Workflow optimisation",
     ],
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
-    deliverables: ["Floor plans", "Furniture layouts", "Circulation diagrams", "Zoning studies"],
   },
   technical: {
     name: "Technical Interior Design",
     icon: PenTool,
-    description:
-      "Precise technical documentation that bridges design intent and construction reality.",
-    longDescription:
-      "Our technical documentation ensures that every design detail is clearly communicated to contractors and builders. We provide comprehensive drawings and specifications that leave no room for ambiguity.",
+    description: "Precise technical documentation for construction.",
+    longDescription: "Our technical documentation ensures that every design detail is clearly communicated to contractors and builders. We provide comprehensive drawings and specifications that leave no room for ambiguity.",
     features: [
-      "Comprehensive design documentation",
-      "Construction drawings and details",
-      "Technical specifications",
-      "Joinery and custom element detailing",
-      "Coordination with consultants and contractors",
+      "Design documentation",
+      "Construction drawings",
+      "Technical detailing",
     ],
     image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80",
-    deliverables: ["Construction drawings", "Technical specifications", "Joinery details", "Coordination drawings"],
   },
   fitout: {
     name: "Interior Fit-Out",
     icon: Hammer,
-    description:
-      "Complete fit-out services that bring designs to life with quality craftsmanship.",
-    longDescription:
-      "From demolition to final installation, our fit-out team manages every aspect of the construction process. We work with trusted contractors to ensure quality workmanship and timely completion.",
+    description: "Complete fit-out services with quality craftsmanship.",
+    longDescription: "From demolition to final installation, our fit-out team manages every aspect of the construction process. We work with trusted contractors to ensure quality workmanship and timely completion.",
     features: [
-      "Flooring finishes installation",
+      "Flooring finishes",
       "Ceiling design and bulkheads",
       "Wall finishes and cladding",
       "Lighting installation",
-      "Quality control and supervision",
     ],
     image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80",
-    deliverables: ["Project management", "Quality inspections", "Progress reports", "Handover documentation"],
   },
   custom: {
     name: "Custom Design",
     icon: Building2,
-    description:
-      "Bespoke furniture and joinery designed and manufactured to your specifications.",
-    longDescription:
-      "Custom furniture and joinery can transform a space from ordinary to extraordinary. We design and manufacture bespoke pieces that perfectly fit your space and reflect your style.",
+    description: "Bespoke furniture and joinery to your specifications.",
+    longDescription: "Custom furniture and joinery can transform a space from ordinary to extraordinary. We design and manufacture bespoke pieces that perfectly fit your space and reflect your style.",
     features: [
-      "Kitchen design and manufacturing",
+      "Kitchen design",
       "TV units and wall units",
-      "Built-in wardrobes",
-      "Custom furniture design",
-      "Prototyping and sampling",
+      "Wardrobes",
+      "Furniture design and manufacturing",
     ],
     image: "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=1200&q=80",
-    deliverables: ["Custom drawings", "Material samples", "Prototypes", "Installation"],
   },
   styling: {
     name: "Styling & Installation",
     icon: Package,
-    description:
-      "Final touches and professional installation that complete the design vision.",
-    longDescription:
-      "The final layer of any interior design project is the styling and finishing touches. We source and install curtains, blinds, artwork, and accessories that bring your space to life.",
+    description: "Final touches and professional installation.",
+    longDescription: "The final layer of any interior design project is the styling and finishing touches. We source and install curtains, blinds, artwork, and accessories that bring your space to life.",
     features: [
-      "Curtains and blinds selection",
-      "Decorative pieces and accessories",
-      "Procurement and sourcing",
-      "Project costing and budgeting",
+      "Curtains and blinds",
+      "Decorative pieces",
+      "Procurement and project costing",
       "Project management and installation",
     ],
     image: "https://images.unsplash.com/photo-1616137466211-f939a420be84?w=1200&q=80",
-    deliverables: ["Styling concepts", "Procurement schedules", "Installation management", "Final walkthrough"],
   },
 };
 
@@ -224,7 +199,7 @@ export default function ServicesPage() {
                     {service.longDescription}
                   </p>
                   <h3 className="text-sm font-semibold text-text mb-4">
-                    Key Deliverables
+                    Key Services
                   </h3>
                   <div className="grid sm:grid-cols-2 gap-3 mb-6">
                     {service.features.map((feature) => (
@@ -238,16 +213,6 @@ export default function ServicesPage() {
                         />
                         <span className="text-sm text-text-muted">{feature}</span>
                       </div>
-                    ))}
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {service.deliverables.map((deliverable) => (
-                      <span
-                        key={deliverable}
-                        className="inline-flex items-center px-3 py-1 bg-surface border border-border rounded-sm text-xs text-text-muted"
-                      >
-                        {deliverable}
-                      </span>
                     ))}
                   </div>
                 </div>

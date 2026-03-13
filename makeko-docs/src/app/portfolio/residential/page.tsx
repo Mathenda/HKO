@@ -2,54 +2,58 @@
 
 import Layout from "@/components/Layout";
 import { Card, Section, Badge } from "@/components/ui";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Home, ArrowLeft, MapPin, Calendar, Maximize2 } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 const projects = [
   {
     name: "Modern Apartment",
-    description: "Contemporary living space with open-plan design and premium finishes",
-    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80",
+    description: "A modern apartment layout with seamless flow and refined finishes.",
+    images: [
+      "/Residential/Residential1/Picture54.jpg",
+      "/Residential/Residential1/Picture55.jpg",
+      "/Residential/Residential1/Picture56.jpg",
+      "/Residential/Residential1/Picture57.jpg",
+      "/Residential/Residential1/Picture58.jpg",
+    ],
     location: "Sandton, Johannesburg",
     year: "2024",
     size: "180 sqm",
   },
   {
     name: "Family Home",
-    description: "Spacious family residence with functional zones and storage solutions",
-    image: "https://images.unsplash.com/photo-1616137466211-f939a420be84?w=800&q=80",
+    description: "A family home interior designed for comfort and everyday living.",
+    images: [
+      "/Residential/Residential2/Picture59.png",
+      "/Residential/Residential2/Picture60.png",
+      "/Residential/Residential2/Picture61.png",
+      "/Residential/Residential2/Picture62.jpg",
+    ],
     location: "Fourways, Johannesburg",
     year: "2023",
     size: "320 sqm",
   },
   {
-    name: "Penthouse Suite",
-    description: "Luxury penthouse with panoramic views and custom furniture",
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
+    name: "Luxury Penthouse",
+    description: "A luxurious penthouse with premium materials and skyline views.",
+    images: [
+      "/Residential/Residential3/Picture63.png",
+      "/Residential/Residential3/Picture64.png",
+      "/Residential/Residential3/Picture65.png",
+      "/Residential/Residential3/Picture66.png",
+      "/Residential/Residential3/Picture67.png",
+    ],
     location: "Sandton, Johannesburg",
     year: "2024",
     size: "420 sqm",
   },
-  {
-    name: "Townhouse Interior",
-    description: "Multi-level townhouse with cohesive design throughout",
-    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80",
-    location: "Rosebank, Johannesburg",
-    year: "2023",
-    size: "280 sqm",
-  },
-  {
-    name: "Kitchen Renovation",
-    description: "Gourmet kitchen with custom cabinetry and premium appliances",
-    image: "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=800&q=80",
-    location: "Pretoria",
-    year: "2024",
-    size: "45 sqm",
-  },
 ];
 
 export default function ResidentialPortfolioPage() {
+  const [openProject, setOpenProject] = useState<string | null>(null);
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -57,7 +61,7 @@ export default function ResidentialPortfolioPage() {
         <div
           className="hero-bg-image"
           style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1920&q=80)`,
+            backgroundImage: `url(/Residential/Residential1/Picture54.jpg)`,
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">
@@ -114,11 +118,11 @@ export default function ResidentialPortfolioPage() {
               <Card className="h-full p-0 overflow-hidden group">
                 <div className="relative h-56 overflow-hidden">
                   <img
-                    src={project.image}
+                    src={project.images[0]}
                     alt={project.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-linear-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="flex items-center gap-3 text-sm text-text">
                       <span className="flex items-center gap-1">
@@ -134,7 +138,52 @@ export default function ResidentialPortfolioPage() {
                     {project.name}
                   </h3>
                   <p className="text-sm text-text-muted mb-4">{project.description}</p>
-                  <div className="flex items-center justify-between text-xs text-text-dim">
+
+                  <div className="grid grid-cols-3 gap-2 mb-4">
+                    {project.images.slice(0, 3).map((src) => (
+                      <img
+                        key={src}
+                        src={src}
+                        alt={project.name}
+                        className="h-16 w-full object-cover rounded"
+                      />
+                    ))}
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setOpenProject(openProject === project.name ? null : project.name)
+                    }
+                    className="text-xs font-medium text-primary hover:text-primary-muted transition-colors"
+                  >
+                    {openProject === project.name ? "Hide gallery" : "View gallery"}
+                  </button>
+
+                  <AnimatePresence>
+                    {openProject === project.name && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="grid grid-cols-3 gap-2 mt-4">
+                          {project.images.map((src) => (
+                            <img
+                              key={src}
+                              src={src}
+                              alt={`${project.name} gallery`}
+                              className="h-20 w-full object-cover rounded"
+                            />
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  <div className="flex items-center justify-between text-xs text-text-dim mt-4">
                     <span className="flex items-center gap-1">
                       <Calendar size={12} />
                       {project.year}

@@ -11,6 +11,7 @@ import {
   GraduationCap,
   Building2,
   Quote,
+  CheckCircle2,
 } from "lucide-react";
 
 export default function CommunityPage() {
@@ -21,7 +22,7 @@ export default function CommunityPage() {
         <div
           className="hero-bg-image"
           style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=1920&q=80)`,
+            backgroundImage: `url(/Community/Picture5.jpg)`,
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">
@@ -57,7 +58,7 @@ export default function CommunityPage() {
           <div className="grid lg:grid-cols-2 gap-0">
             <div className="relative h-64 lg:h-auto overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80"
+                src="/Community/Picture6.jpg"
                 alt="Youth empowerment"
                 className="w-full h-full object-cover"
               />
@@ -68,17 +69,24 @@ export default function CommunityPage() {
                   <Users size={28} className="text-primary" />
                 </div>
                 <h2 className="text-2xl font-semibold text-text">
-                  Youth Empowerment Initiative
+                  High School Outreach and Youth Empowerment
                 </h2>
               </div>
               <p className="text-text-muted leading-relaxed mb-6">
-                Makeko Interiors actively engages with young learners to encourage
-                careers in design, architecture, and construction. We believe in
-                sharing knowledge and providing guidance to those starting their
-                journey in the built environment industry.
+                At Makeko Interiors, youth empowerment is essential for building stronger communities and shaping the future of the built environment.
+              </p>
+              <p className="text-text-muted leading-relaxed mb-6">
+                The studio actively engages with young learners to encourage them to pursue careers in design, architecture, and construction.
+              </p>
+              <p className="text-text-muted leading-relaxed mb-6">
+                As part of this commitment, Makeko Interiors visited SJ Van Der Merwe Technical High School in Limpopo to engage with technical learners and 
+                share insights about opportunities within the built environment industry.
+              </p>
+              <p className="text-text-muted leading-relaxed mb-6">
+                Through mentorship and career guidance initiatives, the studio aims to inspire the next generation of designers and innovators.
               </p>
 
-              <div className="space-y-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div className="p-4 bg-surface rounded-md border border-border">
                   <div className="flex items-start gap-3">
                     <GraduationCap size={20} className="text-primary mt-0.5 flex-shrink-0" />
@@ -127,58 +135,46 @@ export default function CommunityPage() {
                 <Badge variant="primary">Media Feature</Badge>
               </div>
               <h2 className="text-2xl font-semibold text-text mb-4">
-                SABC 3 Feature – 48 Hours Program
+                Media Spotlight
               </h2>
+              <h3 className="text-xl font-semibold text-text mb-4">
+                SABC 3 Feature – 48 Hours
+              </h3>
               <p className="text-text-muted leading-relaxed mb-6">
-                In 2020, our Founder appeared in Episode 5 of the 48 Hours Program
-                on SABC 3, focusing on Furniture Manufacturing and Design. The feature
-                highlighted her journey, challenges, and vision for the future of
-                interior design in South Africa.
+                The Founder and Creative Director of Makeko Interiors was featured on SABC 3
+                in the television program 48 Hours, which aimed to educate young people
+                about various career paths during the 2020 national lockdown.
               </p>
-
-              <div className="relative p-6 bg-surface border border-border rounded-md mb-6">
-                <Quote size={24} className="text-primary/30 mb-3" />
-                <blockquote className="text-text italic mb-3">
-                  &ldquo;The feature highlighted opportunities within furniture manufacturing
-                  and design for aspiring designers, while discussing the challenges
-                  of being a young female entrepreneur in the industry.&rdquo;
-                </blockquote>
+              <p className="text-text-muted leading-relaxed mb-6">
+                She appeared in Episode 5: Furniture Manufacturing and Design, where 
+                she shared insights into her journey within the design industry.
+              </p>
+              
+              <div className="mb-6">
+                <h4 className="text-sm font-semibold text-text mb-3">The feature highlighted:</h4>
+                <ul className="space-y-2">
+                  {[
+                    "Her inspiration for pursuing interior design",
+                    "The challenges of being a young female entrepreneur",
+                    "Opportunities within furniture manufacturing and design",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-text-muted">
+                      <CheckCircle2 size={16} className="text-primary mt-0.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  {
-                    title: "Personal Journey",
-                    description: "Inspiration for pursuing interior design",
-                  },
-                  {
-                    title: "Entrepreneurship",
-                    description: "Challenges as a young female entrepreneur",
-                  },
-                  {
-                    title: "Industry Opportunities",
-                    description: "Opportunities in furniture manufacturing",
-                  },
-                  {
-                    title: "Industry Recognition",
-                    description: "Growing recognition within the design industry",
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.title}
-                    className="p-4 bg-surface rounded-md border border-border"
-                  >
-                    <h4 className="text-sm font-semibold text-text mb-1">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs text-text-muted">{item.description}</p>
-                  </div>
-                ))}
-              </div>
+              <p className="text-text-muted leading-relaxed">
+                This milestone contributed to the growing recognition of Makeko Interiors 
+                within the design industry while inspiring young creatives to pursue careers in 
+                the built environment.
+              </p>
             </div>
             <div className="relative h-64 lg:h-auto overflow-hidden order-1 lg:order-2">
               <img
-                src="https://images.unsplash.com/photo-1593697821252-0c93697821252-0c9137d9fc45?w=800&q=80"
+                src="/Community/Picture7.jpg"
                 alt="SABC 3 Feature"
                 className="w-full h-full object-cover"
               />

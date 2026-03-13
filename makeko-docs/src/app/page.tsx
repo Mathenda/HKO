@@ -55,10 +55,10 @@ const services = [
 ];
 
 const sectors = [
-  { name: "Office", count: 9, href: "/portfolio/office", image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80" },
-  { name: "Retail", count: 5, href: "/portfolio/retail", image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80" },
-  { name: "Healthcare", count: 9, href: "/portfolio/healthcare", image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" },
-  { name: "Residential", count: 5, href: "/portfolio/residential", image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" },
+  { name: "Office", count: 9, href: "/portfolio/office", image: "/Office/Office1/Picture9.png" },
+  { name: "Retail", count: 5, href: "/portfolio/retail", image: "/Retail/Retail1/Picture23.png" },
+  { name: "Healthcare", count: 9, href: "/portfolio/healthcare", image: "/Health/Health1/Picture38.png" },
+  { name: "Residential", count: 5, href: "/portfolio/residential", image: "/Residential/Residential1/Picture54.jpg" },
 ];
 
 const testimonials = [
@@ -206,6 +206,68 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/*  About Makeko Interiors  */}
+      <section className="mb-24">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="label-caps mb-4">About Makeko Interiors</p>
+            <h2 className="text-4xl lg:text-5xl font-light text-text mb-6 leading-tight tracking-tight">
+              Design innovation meets<br />technical expertise
+            </h2>
+            <div className="w-8 h-px bg-border mb-8" />
+            <p className="text-text-muted leading-relaxed mb-6 font-light text-sm lg:text-base">
+              Makeko Interiors is a forward-thinking interior design studio dedicated to delivering technically sound, creative, and functional 
+              interior environments.
+            </p>
+            <p className="text-text-muted leading-relaxed mb-6 font-light text-sm lg:text-base">
+              Founded in 2018 by Mosa Dineo Makgoka, the studio combines design innovation, technical expertise, and strategic problem
+              solving to create spaces that are visually compelling and highly functional.
+            </p>
+            <p className="text-text-muted leading-relaxed mb-6 font-light text-sm lg:text-base">
+              Makeko Interiors approaches every project with a balance of creativity and precision, ensuring that every detail — from spatial 
+              planning to material specification — is carefully considered and expertly executed.
+            </p>
+            <p className="text-text-muted leading-relaxed mb-6 font-light text-sm lg:text-base">
+              The studio collaborates closely with clients, architects, engineers, and contractors to translate ideas into spaces that meet 
+              operational, aesthetic, and regulatory requirements.
+            </p>
+            <div className="mt-8 p-6 bg-surface border border-border rounded-md">
+              <p className="text-sm font-semibold text-text mb-4">The practice focuses strongly on:</p>
+              <ul className="space-y-2">
+                {["Technical detailing", "Design documentation", "Creative spatial solutions"].map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 bg-text-dim shrink-0" />
+                    <span className="text-text-muted text-sm font-light">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-text-muted text-sm font-light leading-relaxed mt-4">
+                allowing projects to move seamlessly from concept development to construction implementation.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="relative h-125 overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&q=80"
+              alt="Modern interior design"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+        </div>
+      </section>
+
       {/*  Our Approach  */}
       <section className="mb-24 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <motion.div
@@ -221,7 +283,7 @@ export default function HomePage() {
           <div className="w-8 h-px bg-border mb-8" />
           <p className="text-text-muted leading-relaxed mb-8 font-light text-sm lg:text-base">
             We approach every project with a balance of creativity and precision,
-            ensuring that every detail  from spatial planning to material specification 
+            ensuring that every detail  from spatial planning to material specification
             is carefully considered and expertly executed.
           </p>
           <ul className="space-y-4">
