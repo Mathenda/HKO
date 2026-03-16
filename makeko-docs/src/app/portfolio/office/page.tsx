@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Building2, ArrowLeft, MapPin, Calendar, Maximize2 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import ImageLightbox from "@/components/ImageLightbox";
 
 const projects = [
   {
@@ -48,6 +49,7 @@ const projects = [
 
 export default function OfficePortfolioPage() {
   const [openProject, setOpenProject] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
 
   return (
     <Layout>
@@ -111,13 +113,18 @@ export default function OfficePortfolioPage() {
               transition={{ duration: 0.3, delay: index * 0.05 }}
             >
               <Card className="overflow-hidden group h-full">
-                <div className="relative h-56 overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => setSelectedImage({ src: project.images[0], alt: project.name })}
+                  className="relative h-56 overflow-hidden w-full text-left cursor-zoom-in"
+                  aria-label={`Open ${project.name} image fullscreen`}
+                >
                   <img
                     src={project.images[0]}
                     alt={project.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                </div>
+                </button>
                 <div className="p-5">
                   <h3 className="text-lg font-semibold text-text mb-2">
                     {project.name}
@@ -128,12 +135,19 @@ export default function OfficePortfolioPage() {
 
                   <div className="grid grid-cols-3 gap-2 mb-4">
                     {project.images.slice(0, 3).map((src) => (
-                      <img
+                      <button
+                        type="button"
                         key={src}
-                        src={src}
-                        alt={project.name}
-                        className="h-16 w-full object-cover rounded"
-                      />
+                        onClick={() => setSelectedImage({ src, alt: `${project.name} thumbnail` })}
+                        className="cursor-zoom-in"
+                        aria-label={`Open ${project.name} thumbnail fullscreen`}
+                      >
+                        <img
+                          src={src}
+                          alt={project.name}
+                          className="h-16 w-full object-cover rounded"
+                        />
+                      </button>
                     ))}
                   </div>
 
@@ -173,12 +187,19 @@ export default function OfficePortfolioPage() {
                       >
                         <div className="grid grid-cols-2 gap-2 mt-4">
                           {project.images.map((src) => (
-                            <img
+                            <button
+                              type="button"
                               key={src}
-                              src={src}
-                              alt={`${project.name} gallery`}
-                              className="h-20 w-full object-cover rounded"
-                            />
+                              onClick={() => setSelectedImage({ src, alt: `${project.name} gallery` })}
+                              className="cursor-zoom-in"
+                              aria-label={`Open ${project.name} gallery image fullscreen`}
+                            >
+                              <img
+                                src={src}
+                                alt={`${project.name} gallery`}
+                                className="h-20 w-full object-cover rounded"
+                              />
+                            </button>
                           ))}
                         </div>
                       </motion.div>
@@ -216,6 +237,12 @@ export default function OfficePortfolioPage() {
           </div>
         </Card>
       </Section>
+
+      <ImageLightbox
+        src={selectedImage?.src ?? null}
+        alt={selectedImage?.alt ?? "Office portfolio image"}
+        onClose={() => setSelectedImage(null)}
+      />
     </Layout>
   );
 }

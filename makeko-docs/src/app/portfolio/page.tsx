@@ -5,6 +5,8 @@ import { Card, Section, Badge } from "@/components/ui";
 import { motion } from "framer-motion";
 import { Building2, Store, Heart, Home, ArrowRight, Grid3X3, MapPin, Calendar } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
+import ImageLightbox from "@/components/ImageLightbox";
 
 const sectors = [
   {
@@ -62,6 +64,8 @@ const sectors = [
 ];
 
 export default function PortfolioPage() {
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -138,7 +142,12 @@ export default function PortfolioPage() {
           >
             <Card className="overflow-hidden">
               <div className="grid lg:grid-cols-2 gap-0">
-                <div className="relative h-64 lg:h-80 overflow-hidden group">
+                <button
+                  type="button"
+                  onClick={() => setSelectedImage({ src: sector.image, alt: `${sector.name} featured image` })}
+                  className="relative h-64 lg:h-80 overflow-hidden group text-left w-full cursor-zoom-in"
+                  aria-label={`Open ${sector.name} image fullscreen`}
+                >
                   <img
                     src={sector.image}
                     alt={sector.name}
@@ -157,7 +166,7 @@ export default function PortfolioPage() {
                     <h2 className="text-2xl font-semibold text-white mb-2">{sector.name}</h2>
                     <p className="text-white/80">{sector.description}</p>
                   </div>
-                </div>
+                </button>
                 <div className="p-8 lg:p-10 flex flex-col justify-center">
                   <h3 className="text-sm font-semibold text-text mb-4 flex items-center gap-2">
                     <Grid3X3 size={18} className="text-primary" />
@@ -227,6 +236,12 @@ export default function PortfolioPage() {
           </div>
         </Card>
       </Section>
+
+      <ImageLightbox
+        src={selectedImage?.src ?? null}
+        alt={selectedImage?.alt ?? "Portfolio image"}
+        onClose={() => setSelectedImage(null)}
+      />
     </Layout>
   );
 }

@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Home, ArrowLeft, MapPin, Calendar, Maximize2 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import ImageLightbox from "@/components/ImageLightbox";
 
 const projects = [
   {
@@ -53,6 +54,7 @@ const projects = [
 
 export default function ResidentialPortfolioPage() {
   const [openProject, setOpenProject] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
 
   return (
     <Layout>
@@ -116,7 +118,12 @@ export default function ResidentialPortfolioPage() {
               transition={{ duration: 0.3, delay: index * 0.05 }}
             >
               <Card className="h-full p-0 overflow-hidden group">
-                <div className="relative h-56 overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => setSelectedImage({ src: project.images[0], alt: project.name })}
+                  className="relative h-56 overflow-hidden w-full text-left cursor-zoom-in"
+                  aria-label={`Open ${project.name} image fullscreen`}
+                >
                   <img
                     src={project.images[0]}
                     alt={project.name}
@@ -132,7 +139,7 @@ export default function ResidentialPortfolioPage() {
                     </div>
                     <Maximize2 size={18} className="text-white cursor-pointer" />
                   </div>
-                </div>
+                </button>
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-text mb-2">
                     {project.name}
@@ -141,12 +148,19 @@ export default function ResidentialPortfolioPage() {
 
                   <div className="grid grid-cols-3 gap-2 mb-4">
                     {project.images.slice(0, 3).map((src) => (
-                      <img
+                      <button
+                        type="button"
                         key={src}
-                        src={src}
-                        alt={project.name}
-                        className="h-16 w-full object-cover rounded"
-                      />
+                        onClick={() => setSelectedImage({ src, alt: `${project.name} thumbnail` })}
+                        className="cursor-zoom-in"
+                        aria-label={`Open ${project.name} thumbnail fullscreen`}
+                      >
+                        <img
+                          src={src}
+                          alt={project.name}
+                          className="h-16 w-full object-cover rounded"
+                        />
+                      </button>
                     ))}
                   </div>
 
@@ -171,12 +185,19 @@ export default function ResidentialPortfolioPage() {
                       >
                         <div className="grid grid-cols-3 gap-2 mt-4">
                           {project.images.map((src) => (
-                            <img
+                            <button
+                              type="button"
                               key={src}
-                              src={src}
-                              alt={`${project.name} gallery`}
-                              className="h-20 w-full object-cover rounded"
-                            />
+                              onClick={() => setSelectedImage({ src, alt: `${project.name} gallery` })}
+                              className="cursor-zoom-in"
+                              aria-label={`Open ${project.name} gallery image fullscreen`}
+                            >
+                              <img
+                                src={src}
+                                alt={`${project.name} gallery`}
+                                className="h-20 w-full object-cover rounded"
+                              />
+                            </button>
                           ))}
                         </div>
                       </motion.div>
@@ -199,6 +220,12 @@ export default function ResidentialPortfolioPage() {
           ))}
         </div>
       </Section>
+
+      <ImageLightbox
+        src={selectedImage?.src ?? null}
+        alt={selectedImage?.alt ?? "Residential portfolio image"}
+        onClose={() => setSelectedImage(null)}
+      />
     </Layout>
   );
 }
