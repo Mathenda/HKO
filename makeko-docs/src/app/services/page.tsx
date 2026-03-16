@@ -137,7 +137,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-text-muted max-w-2xl mx-auto leading-relaxed text-white"
+            className="text-xl text-text-muted max-w-2xl mx-auto leading-relaxed text-black"
           >
             Comprehensive interior design services covering every aspect from initial
             concept through to final installation.
@@ -224,7 +224,7 @@ export default function ServicesPage() {
 
       {/* Additional Services Banner */}
       <Section>
-        <Card className="bg-gradient-to-r from-primary/10 to-secondary/10 border-border">
+        <Card className="bg-surface border-border">
           <div className="text-center py-12">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/20 rounded-full mb-6">
               <Lightbulb size={32} className="text-primary" />

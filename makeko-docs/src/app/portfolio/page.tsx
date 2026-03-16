@@ -144,16 +144,18 @@ export default function PortfolioPage() {
                     alt={sector.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+                  <div className="absolute inset-0 bg-black/45" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="p-2 bg-surface/90 backdrop-blur-sm rounded-md">
-                        <sector.icon size={24} className="text-primary" />
+                      <div className="p-2 bg-black/50 border border-white/20 backdrop-blur-sm rounded-md">
+                        <sector.icon size={24} className="text-white" />
                       </div>
-                      <Badge variant="primary">{sector.count} Projects</Badge>
+                      <Badge variant="default" className="border-white/40 text-white bg-black/35">
+                        {sector.count} Projects
+                      </Badge>
                     </div>
-                    <h2 className="text-2xl font-semibold text-text mb-2">{sector.name}</h2>
-                    <p className="text-text-muted">{sector.description}</p>
+                    <h2 className="text-2xl font-semibold text-white mb-2">{sector.name}</h2>
+                    <p className="text-white/80">{sector.description}</p>
                   </div>
                 </div>
                 <div className="p-8 lg:p-10 flex flex-col justify-center">

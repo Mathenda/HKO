@@ -137,7 +137,7 @@ export default function Header() {
             <div className="flex items-center gap-4">
               <Link
                 href="/contact"
-                className="hidden lg:inline-flex items-center px-5 py-2.5 bg-text text-background text-[10px] tracking-[0.12em] uppercase font-medium hover:bg-text/80 transition-colors duration-200"
+                className="hidden lg:inline-flex items-center px-5 py-2.5 bg-text !text-white border border-white/20 text-[10px] tracking-[0.12em] uppercase font-medium hover:bg-text/80 transition-colors duration-200"
               >
                 Start a Project
               </Link>
@@ -222,7 +222,7 @@ export default function Header() {
             <div className="p-6 border-t border-border">
               <Link
                 href="/contact"
-                className="block text-center text-[11px] tracking-[0.12em] uppercase text-background bg-text py-4 font-medium hover:bg-text/80 transition-colors"
+                className="block text-center text-[11px] tracking-[0.12em] uppercase !text-white bg-text border border-white/20 py-4 font-medium hover:bg-text/80 transition-colors"
               >
                 Start a Project
               </Link>

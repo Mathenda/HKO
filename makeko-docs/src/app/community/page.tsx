@@ -20,7 +20,7 @@ export default function CommunityPage() {
       {/* Hero Section */}
       <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden -mx-6 lg:-mx-12 px-6 lg:px-12 mb-16">
         <div
-          className="hero-bg-image"
+          className="hero-bg-image community-hero-bg-image"
           style={{
             backgroundImage: `url(/Community/Picture5.jpg)`,
           }}
@@ -60,7 +60,7 @@ export default function CommunityPage() {
               <img
                 src="/Community/Picture6.jpg"
                 alt="Youth empowerment"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover community-soft-image"
               />
             </div>
             <div className="p-8 lg:p-10">
@@ -176,7 +176,7 @@ export default function CommunityPage() {
               <img
                 src="/Community/Picture7.jpg"
                 alt="SABC 3 Feature"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover community-soft-image"
               />
               <div className="absolute bottom-4 left-4 right-4">
                 <div className="p-4 bg-surface/90 backdrop-blur-sm rounded-md border border-border">
@@ -254,7 +254,7 @@ export default function CommunityPage() {
 
       {/* Testimonial/Quote Section */}
       <Section className="pb-8">
-        <Card className="bg-gradient-to-r from-primary/10 to-secondary/10 border-border">
+        <Card className="bg-surface border-border">
           <div className="text-center py-12 px-6">
             <Quote size={48} className="text-primary/30 mx-auto mb-6" />
             <blockquote className="text-xl lg:text-2xl text-text max-w-3xl mx-auto mb-6 leading-relaxed">

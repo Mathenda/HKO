@@ -95,26 +95,55 @@ body {
   border-bottom-color: var(--primary);
 }
 
-/* Visual enhancement classes */
-.hero-bg {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, var(--background) 100%);
-  z-index: 1;
-}
-
 .hero-bg-image {
   position: absolute;
   inset: 0;
+  z-index: 0;
   background-size: cover;
   background-position: center;
-  filter: brightness(0.6) saturate(1.1);
+  filter: brightness(0.85) saturate(1.05) blur(8px);
+  transform: scale(1.05);
+}
+
+.hero-bg-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0.5) 0%,
+    rgba(10, 10, 10, 0.65) 100%
+  );
+}
+
+.hero-bg-image + .relative {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+}
+
+.hero-bg-image + .relative .text-text {
+  color: rgba(255, 255, 255, 0.96) !important;
+}
+
+.hero-bg-image + .relative .text-text-muted,
+.hero-bg-image + .relative .text-black {
+  color: rgba(255, 255, 255, 0.84) !important;
+}
+
+.hero-bg-image + .relative .text-primary,
+.hero-bg-image + .relative .border-primary\/40 {
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.community-hero-bg-image {
+  filter: brightness(0.8) saturate(1.02) blur(12px);
+  transform: scale(1.08);
+}
+
+.community-soft-image {
+  filter: blur(1.8px) saturate(1.02);
+  transform: scale(1.03);
+  transform-origin: center;
 }
 
 .image-card {
@@ -129,18 +158,6 @@ body {
 .image-card:hover img {
   transform: scale(1.05);
   filter: brightness(1.1);
-}
-
-.image-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.55) 100%);
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
-.image-card:hover .image-overlay {
-  opacity: 1;
 }
 
 /* Image mosaic gallery grid */
@@ -281,13 +298,13 @@ body {
 }
 
 /* Links */
-a {
+a:not([class]) {
   color: var(--primary);
   text-decoration: none;
   transition: color 150ms ease;
 }
 
-a:hover {
+a:not([class]):hover {
   color: var(--primary-muted);
 }
 

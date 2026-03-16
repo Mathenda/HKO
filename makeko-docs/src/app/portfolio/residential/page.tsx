@@ -122,15 +122,15 @@ export default function ResidentialPortfolioPage() {
                     alt={project.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-black/45 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="flex items-center gap-3 text-sm text-text">
+                    <div className="flex items-center gap-3 text-sm text-white">
                       <span className="flex items-center gap-1">
                         <MapPin size={14} />
                         {project.location}
                       </span>
                     </div>
-                    <Maximize2 size={18} className="text-text cursor-pointer" />
+                    <Maximize2 size={18} className="text-white cursor-pointer" />
                   </div>
                 </div>
                 <div className="p-6">

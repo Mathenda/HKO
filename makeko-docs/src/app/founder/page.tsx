@@ -231,14 +231,6 @@ export default function FounderPage() {
                 </cite>
               </div>
             </div>
-            <div className="relative h-96 overflow-hidden">
-              <img
-                src="/Makeko-founder.png"
-                alt="Design philosophy"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
-            </div>
           </div>
         </Card>
       </Section>
