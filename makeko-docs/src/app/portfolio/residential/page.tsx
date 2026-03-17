@@ -13,11 +13,14 @@ const projects = [
     name: "Modern Apartment",
     description: "A modern apartment layout with seamless flow and refined finishes.",
     images: [
-      "/Residential/Residential1/Picture54.jpg",
-      "/Residential/Residential1/Picture55.jpg",
-      "/Residential/Residential1/Picture56.jpg",
-      "/Residential/Residential1/Picture57.jpg",
-      "/Residential/Residential1/Picture58.jpg",
+      "/Residential/Residential1/ResidentialA (6).jpg",
+      "/Residential/Residential1/ResidentialA (1).jpg",
+      "/Residential/Residential1/ResidentialA (2).jpg",
+      "/Residential/Residential1/ResidentialA (3).jpg",
+      "/Residential/Residential1/ResidentialA (4).jpg",
+      "/Residential/Residential1/ResidentialA (5).jpg",
+      "/Residential/Residential1/ResidentialA (7).jpg",
+      "/Residential/Residential1/ResidentialA (8).jpg",
     ],
     location: "Sandton, Johannesburg",
     year: "2024",
@@ -27,8 +30,8 @@ const projects = [
     name: "Family Home",
     description: "A family home interior designed for comfort and everyday living.",
     images: [
-      "/Residential/Residential2/Picture59.png",
       "/Residential/Residential2/Picture60.png",
+      "/Residential/Residential2/Picture59.png",
       "/Residential/Residential2/Picture61.png",
       "/Residential/Residential2/Picture62.jpg",
     ],
@@ -40,11 +43,11 @@ const projects = [
     name: "Luxury Penthouse",
     description: "A luxurious penthouse with premium materials and skyline views.",
     images: [
+      "/Residential/Residential3/Picture67.png",
       "/Residential/Residential3/Picture63.png",
       "/Residential/Residential3/Picture64.png",
       "/Residential/Residential3/Picture65.png",
       "/Residential/Residential3/Picture66.png",
-      "/Residential/Residential3/Picture67.png",
     ],
     location: "Sandton, Johannesburg",
     year: "2024",
@@ -63,7 +66,7 @@ export default function ResidentialPortfolioPage() {
         <div
           className="hero-bg-image"
           style={{
-            backgroundImage: `url(/Residential/Residential1/Picture54.jpg)`,
+            backgroundImage: `url(/Residential/Residential1/ResidentialA (6).jpg)`,
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">

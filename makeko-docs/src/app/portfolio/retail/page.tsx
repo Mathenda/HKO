@@ -37,9 +37,10 @@ const projects = [
     name: "Flagship Showroom",
     description: "Brand-defining retail showroom with immersive customer zones.",
     images: [
-      "/Retail/Retail3/Picture29.png",
       "/Retail/Retail3/Picture30.png",
+      "/Retail/Retail3/Picture29.png",
       "/Retail/Retail3/Picture31.png",
+      "/Retail/Retail3/Picture32.png",
     ],
     location: "Sandton, Johannesburg",
     year: "2024",
@@ -49,9 +50,10 @@ const projects = [
     name: "Pop-up Experience",
     description: "Temporary activation space designed for quick assembly and high impact.",
     images: [
+      "/Retail/Retail4/Picture35.jpg",
+      "/Retail/Retail4/Picture36.jpg",
       "/Retail/Retail4/Picture33.png",
       "/Retail/Retail4/Picture34.png",
-      "/Retail/Retail4/Picture35.jpg",
     ],
     location: "Maboneng, Johannesburg",
     year: "2023",

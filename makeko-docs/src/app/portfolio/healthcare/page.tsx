@@ -13,6 +13,8 @@ const projects = [
     name: "Medical Campus Reception",
     description: "A calm, welcoming reception and waiting space with thoughtful wayfinding.",
     images: [
+      "/Health/Health1/Picture41.png",
+      "/Health/Health1/Picture42.png",
       "/Health/Health1/Picture38.png",
       "/Health/Health1/Picture39.png",
       "/Health/Health1/Picture40.png",
@@ -25,10 +27,12 @@ const projects = [
     name: "Clinical Suite",
     description: "A functional clinical suite with integrated technology and efficient circulation.",
     images: [
+      "/Health/Health2/Picture46.jpg",
       "/Health/Health2/Picture43.png",
       "/Health/Health2/Picture44.jpg",
       "/Health/Health2/Picture45.jpg",
-      "/Health/Health2/Picture46.jpg",
+      "/Health/Health2/Picture47.jpg",
+      "/Health/Health2/Picture48.jpg",
     ],
     location: "Johannesburg",
     year: "2023",
@@ -38,11 +42,11 @@ const projects = [
     name: "Wellness Hub",
     description: "A calming wellness interior focused on comfort and patient well-being.",
     images: [
+      "/Health/Health3/Picture53.png",
       "/Health/Health3/Picture49.png",
       "/Health/Health3/Picture50.jpg",
       "/Health/Health3/Picture51.jpg",
       "/Health/Health3/Picture52.jpg",
-      "/Health/Health3/Picture53.png",
     ],
     location: "Cape Town",
     year: "2024",
@@ -61,7 +65,7 @@ export default function HealthcarePortfolioPage() {
         <div
           className="hero-bg-image"
           style={{
-            backgroundImage: `url(/Health/Health1/Picture38.png)`,
+            backgroundImage: `url(/Health/Health1/Picture41.png)`,
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">

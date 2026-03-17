@@ -34,7 +34,7 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm p-1 md:p-2"
+          className="fixed inset-0 z-100 bg-black/95 backdrop-blur-sm p-1 md:p-2"
           onClick={onClose}
           role="dialog"
           aria-modal="true"
@@ -57,7 +57,7 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
               transition={{ duration: 0.2 }}
               src={src}
               alt={alt}
-              className="h-full w-full max-h-[98vh] max-w-[98vw] object-contain"
+              className="h-auto w-auto max-h-[98vh] max-w-[98vw] object-contain"
               onClick={(event: MouseEvent<HTMLImageElement>) => event.stopPropagation()}
             />
           </div>

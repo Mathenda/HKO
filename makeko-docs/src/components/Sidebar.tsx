@@ -103,9 +103,10 @@ export default function Sidebar() {
                             : "text-text-muted hover:text-text hover:bg-surface-hover"
                         }`}
                       >
-                        <item.icon size={18} />
+                        <item.icon size={18} className="shrink-0" />
                         <span className="flex-1 text-left">{item.name}</span>
                         <motion.span
+                          className="flex"
                           animate={{
                             rotate: expandedSections.includes(item.name)
                               ? 180

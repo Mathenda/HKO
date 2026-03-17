@@ -13,9 +13,11 @@ const projects = [
     name: "Executive Hub",
     description: "A premium office project featuring a welcoming reception and collaborative work zones.",
     images: [
+      "/Office/Office1/Office Mgibba 1.png",
       "/Office/Office1/Picture9.png",
       "/Office/Office1/Picture10.png",
       "/Office/Office1/Picture11.png",
+      "/Office/Office1/Picture12.png",
     ],
     location: "Sandton, Johannesburg",
     year: "2024",
@@ -25,9 +27,11 @@ const projects = [
     name: "Creative Studio",
     description: "A flexible workspace designed for team collaboration and focused work.",
     images: [
+      "/Office/Office2/PT 1.png",
       "/Office/Office2/Picture13.png",
       "/Office/Office2/Picture14.png",
       "/Office/Office2/Picture15.png",
+      "/Office/Office2/Picture16.png",
     ],
     location: "Maboneng, Johannesburg",
     year: "2023",
@@ -37,13 +41,39 @@ const projects = [
     name: "Corporate Headquarters",
     description: "A high-end headquarters with meeting suites and executive areas.",
     images: [
+      "/Office/Office3/Vuna 2.png",
       "/Office/Office3/Picture17.png",
       "/Office/Office3/Picture18.png",
+      "/Office/Office3/Picture19.png",
+      "/Office/Office3/Picture20.png",
       "/Office/Office3/Picture21.jpg",
+      "/Office/Office3/Picture22.jpg",
     ],
     location: "Rosebank, Johannesburg",
     year: "2024",
     size: "3,200 sqm",
+  },
+  {
+    name: "Consultation Suite",
+    description: "A consultation-driven office interior focused on privacy and client comfort.",
+    images: [
+      "/Office/Office4/Consultation 1.png",
+      "/Office/Office4/Consultation 2.png",
+    ],
+    location: "Johannesburg",
+    year: "2025",
+    size: "740 sqm",
+  },
+  {
+    name: "Client Consult Hub",
+    description: "A modern consultation hub balancing professional functionality with warmth.",
+    images: [
+      "/Office/Office5/Consult 2.png",
+      "/Office/Office5/Consult 1 .png",
+    ],
+    location: "Pretoria",
+    year: "2025",
+    size: "680 sqm",
   },
 ];
 
@@ -58,7 +88,7 @@ export default function OfficePortfolioPage() {
         <div
           className="hero-bg-image"
           style={{
-            backgroundImage: `url(/Office/Office1/Picture9.png)`,
+            backgroundImage: `url(/Office/Office1/Office Mgibba 1.png)`,
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">

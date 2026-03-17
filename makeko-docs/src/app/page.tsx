@@ -55,10 +55,10 @@ const services = [
 ];
 
 const sectors = [
-  { name: "Office", count: 9, href: "/portfolio/office", image: "/Office/Office1/Picture9.png" },
-  { name: "Retail", count: 5, href: "/portfolio/retail", image: "/Retail/Retail1/Picture23.png" },
-  { name: "Healthcare", count: 9, href: "/portfolio/healthcare", image: "/Health/Health1/Picture38.png" },
-  { name: "Residential", count: 5, href: "/portfolio/residential", image: "/Residential/Residential1/Picture54.jpg" },
+  { name: "Office", count: 22, href: "/portfolio/office", image: "/Office/Office1/Office Mgibba 1.png" },
+  { name: "Retail", count: 14, href: "/portfolio/retail", image: "/Retail/Retail4/Picture35.jpg" },
+  { name: "Healthcare", count: 16, href: "/portfolio/healthcare", image: "/Health/Health1/Picture41.png" },
+  { name: "Residential", count: 17, href: "/portfolio/residential", image: "/Residential/Residential1/ResidentialA (6).jpg" },
 ];
 
 const testimonials = [
@@ -163,7 +163,7 @@ export default function HomePage() {
         {/* Image half */}
         <div className="hidden lg:block relative flex-1 overflow-hidden min-h-full">
           <img
-            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80"
+            src="\Retail\Retail4\Picture36.jpg"
             alt="Interior space"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -199,7 +199,7 @@ export default function HomePage() {
               IID
             </div>
             <div className="label-caps text-sm">Member</div>
-            <p className="text-xs text-text-dim mt-2 max-w-[140px] leading-relaxed">
+            <p className="text-xs text-text-dim mt-2 max-w-35 leading-relaxed">
               African Institute of Interior Design Professions
             </p>
           </motion.div>
@@ -207,7 +207,7 @@ export default function HomePage() {
       </section>
 
       {/*  About Makeko Interiors  */}
-      <section className="mb-24">
+      <section id="about" className="mb-24">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -260,7 +260,7 @@ export default function HomePage() {
             className="relative h-125 overflow-hidden"
           >
             <img
-              src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&q=80"
+              src="/Residential/Residential1/ResidentialA (6).jpg"
               alt="Modern interior design"
               className="w-full h-full object-cover"
             />
@@ -309,7 +309,7 @@ export default function HomePage() {
           className="relative h-125 overflow-hidden"
         >
           <img
-            src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&q=80"
+            src="/Office/Office3/Vuna 2.png"
             alt="Modern interior design"
             className="w-full h-full object-cover"
           />
@@ -377,19 +377,19 @@ export default function HomePage() {
         </div>
         <div className="gallery-mosaic -mx-6 lg:-mx-12">
           <div className="gallery-cell-tall">
-            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" alt="Interior design project" />
+            <img src="/Residential/Residential1/ResidentialA (2).jpg" alt="Interior design project" />
           </div>
           <div>
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Office interior" />
+            <img src="/Office/Office4/Consultation 2.png" alt="Office interior" />
           </div>
           <div>
-            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80" alt="Interior concept" />
+            <img src="/Retail/Retail4/Picture35.jpg" alt="Interior concept" />
           </div>
           <div>
-            <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=800&q=80" alt="Kitchen design" />
+            <img src="/Health/Health2/Picture43.png" alt="Kitchen design" />
           </div>
           <div>
-            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Healthcare interior" />
+            <img src="/Health/Health1/Picture41.png" alt="Healthcare interior" />
           </div>
         </div>
       </section>
@@ -502,7 +502,7 @@ export default function HomePage() {
             className="relative h-120 overflow-hidden"
           >
             <img
-              src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=800&q=80"
+                src="/Office/Office5/Consult 2.png"
               alt="Beautiful interior space"
               className="w-full h-full object-cover"
             />

@@ -7,6 +7,10 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const navigation = [
+  { name: "Home", href: "/" },
+  { name: "About us", href: "/#about" },
+  { name: "Founder", href: "/founder" },
+  { name: "Community", href: "/community" },
   { name: "Services", href: "/services" },
   {
     name: "Portfolio",
@@ -18,9 +22,6 @@ const navigation = [
       { name: "Residential", href: "/portfolio/residential" },
     ],
   },
-  { name: "Process", href: "/process" },
-  { name: "Founder", href: "/founder" },
-  { name: "Community", href: "/community" },
 ];
 
 export default function Header() {

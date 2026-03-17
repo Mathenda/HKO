@@ -66,7 +66,7 @@ export default function ContactPage() {
         <div
           className="hero-bg-image"
           style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1600607686527-6fb886090705?w=1920&q=80)`,
+            backgroundImage: `url(/Office/Office4/Consultation 2.png)`,
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">
@@ -250,7 +250,7 @@ export default function ContactPage() {
                     transition={{ duration: 0.2, delay: index * 0.05 }}
                     className="flex items-start gap-4 p-4 bg-surface rounded-md border border-border hover:border-primary/50 transition-colors"
                   >
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <div className="p-3 bg-primary/10 rounded-md">
                         <method.icon size={24} className="text-primary" />
                       </div>
@@ -332,7 +332,7 @@ export default function ContactPage() {
         <Card className="overflow-hidden p-0">
           <div className="relative h-80 bg-surface">
             <img
-              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1600&q=80"
+              src="/Community/Picture8.jpg"
               alt="Map location"
               className="w-full h-full object-cover opacity-50"
             />

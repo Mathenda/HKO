@@ -27,7 +27,7 @@ const processSteps = [
       "Client requirements analysis",
       "Budget and timeline assessment",
     ],
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+    image: "/Office/Office4/Consultation 1.png",
     icon: ClipboardList,
   },
   {
@@ -40,7 +40,7 @@ const processSteps = [
       "3D visualization studies",
       "Design direction presentations",
     ],
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80",
+    image: "/Residential/Residential1/ResidentialA (2).jpg",
     icon: Lightbulb,
   },
   {
@@ -53,7 +53,7 @@ const processSteps = [
       "Material and finish schedules",
       "Furniture and fixture selection",
     ],
-    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&q=80",
+    image: "/Office/Office3/Vuna 2.png",
     icon: Ruler,
   },
   {
@@ -66,7 +66,7 @@ const processSteps = [
       "Technical specifications",
       "Consultant coordination",
     ],
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+    image: "/Office/Office1/Office Mgibba 1.png",
     icon: PenTool,
   },
   {
@@ -79,7 +79,7 @@ const processSteps = [
       "Material procurement",
       "Sample approvals",
     ],
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
+    image: "/Retail/Retail4/Picture36.jpg",
     icon: FileText,
   },
   {
@@ -92,7 +92,7 @@ const processSteps = [
       "Progress meetings",
       "Snagging and defect resolution",
     ],
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
+    image: "/Retail/Retail4/Picture35.jpg",
     icon: Hammer,
   },
   {
@@ -105,7 +105,7 @@ const processSteps = [
       "Final inspections",
       "Project handover documentation",
     ],
-    image: "https://images.unsplash.com/photo-1616137466211-f939a420be84?w=800&q=80",
+    image: "/Community/Picture7.jpg",
     icon: Layers,
   },
 ];
@@ -141,7 +141,7 @@ export default function ProcessPage() {
         <div
           className="hero-bg-image"
           style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80)`,
+            backgroundImage: `url(/Office/Office4/Consultation 1.png)`,
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">
@@ -240,7 +240,7 @@ export default function ProcessPage() {
                       >
                         <CheckCircle2
                           size={16}
-                          className="text-primary mt-0.5 flex-shrink-0"
+                          className="text-primary mt-0.5 shrink-0"
                         />
                         <span className="text-sm text-text-dim">
                           {detail}

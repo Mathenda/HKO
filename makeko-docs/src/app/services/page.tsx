@@ -32,7 +32,7 @@ const services = {
       "Material and finishes concepts",
       "3D design visualization",
     ],
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80",
+    image: "/Residential/Residential1/ResidentialA (2).jpg",
   },
   planning: {
     name: "Space Planning & Layout",
@@ -44,7 +44,7 @@ const services = {
       "Functional planning",
       "Workflow optimisation",
     ],
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
+    image: "/Office/Office2/PT 1.png",
   },
   technical: {
     name: "Technical Interior Design",
@@ -56,7 +56,7 @@ const services = {
       "Construction drawings",
       "Technical detailing",
     ],
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80",
+    image: "/Office/Office3/Vuna 2.png",
   },
   fitout: {
     name: "Interior Fit-Out",
@@ -69,7 +69,7 @@ const services = {
       "Wall finishes and cladding",
       "Lighting installation",
     ],
-    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80",
+    image: "/Office/Office4/Consultation 1.png",
   },
   custom: {
     name: "Custom Design",
@@ -82,7 +82,7 @@ const services = {
       "Wardrobes",
       "Furniture design and manufacturing",
     ],
-    image: "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=1200&q=80",
+    image: "/Residential/Residential1/ResidentialA (6).jpg",
   },
   styling: {
     name: "Styling & Installation",
@@ -95,7 +95,7 @@ const services = {
       "Procurement and project costing",
       "Project management and installation",
     ],
-    image: "https://images.unsplash.com/photo-1616137466211-f939a420be84?w=1200&q=80",
+    image: "/Media-spotlight.png",
   },
 };
 
@@ -114,7 +114,7 @@ export default function ServicesPage() {
         <div
           className="hero-bg-image"
           style={{
-            backgroundImage: `url(https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1920&q=80)`,
+            backgroundImage: `url(/Office/Office1/Office Mgibba 1.png)`,
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">
@@ -137,7 +137,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-text-muted max-w-2xl mx-auto leading-relaxed text-black"
+            className="text-xl text-text-muted max-w-2xl mx-auto leading-relaxed"
           >
             Comprehensive interior design services covering every aspect from initial
             concept through to final installation.
@@ -209,7 +209,7 @@ export default function ServicesPage() {
                       >
                         <CheckCircle2
                           size={18}
-                          className="text-primary mt-0.5 flex-shrink-0"
+                          className="text-primary mt-0.5 shrink-0"
                         />
                         <span className="text-sm text-text-muted">{feature}</span>
                       </div>
