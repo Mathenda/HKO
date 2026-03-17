@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -54,13 +55,15 @@ export default function Header() {
           <div className="flex items-center justify-between h-full">
 
             {/* Brand */}
-            <Link href="/" className="flex flex-col leading-[1.15]">
-              <span className="text-[18px] font-light tracking-[0.04em] text-text">
-                Makeko
-              </span>
-              <span className="text-[9px] tracking-[0.22em] uppercase text-text-muted font-light">
-                Interiors
-              </span>
+            <Link href="/" className="flex items-center" aria-label="Makeko Interiors">
+              <Image
+                src="/Logo.png"
+                alt="Makeko Interiors"
+                width={180}
+                height={64}
+                priority
+                className="h-10 w-auto"
+              />
             </Link>
 
             {/* Desktop nav */}
@@ -75,7 +78,7 @@ export default function Header() {
                             openDropdown === item.name ? null : item.name
                           )
                         }
-                      className={`flex items-center gap-1.5 text-[11px] tracking-widest uppercase font-light transition-colors duration-200 ${
+                      className={`relative top-0.5 flex items-center gap-1.5 text-[11px] tracking-widest uppercase font-light transition-colors duration-200 ${
                           pathname.startsWith(item.href)
                             ? "text-text"
                             : "text-text-muted hover:text-text"
@@ -138,7 +141,7 @@ export default function Header() {
             <div className="flex items-center gap-4">
               <Link
                 href="/contact"
-                className="hidden lg:inline-flex items-center px-5 py-2.5 bg-text !text-white border border-white/20 text-[10px] tracking-[0.12em] uppercase font-medium hover:bg-text/80 transition-colors duration-200"
+                className="hidden lg:inline-flex items-center px-5 py-2.5 bg-text text-white! border border-white/20 text-[10px] tracking-[0.12em] uppercase font-medium hover:bg-text/80 transition-colors duration-200"
               >
                 Start a Project
               </Link>
@@ -165,13 +168,19 @@ export default function Header() {
             className="fixed inset-0 z-50 bg-background flex flex-col"
           >
             <div className="flex items-center justify-between h-18 px-6 border-b border-border">
-              <Link href="/" onClick={() => setIsMenuOpen(false)} className="flex flex-col leading-[1.15]">
-                <span className="text-[18px] font-light tracking-[0.04em] text-text">
-                  Makeko
-                </span>
-                <span className="text-[9px] tracking-[0.22em] uppercase text-text-muted font-light">
-                  Interiors
-                </span>
+              <Link
+                href="/"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center"
+                aria-label="Makeko Interiors"
+              >
+                <Image
+                  src="/Logo.png"
+                  alt="Makeko Interiors"
+                  width={180}
+                  height={64}
+                  className="h-9 w-auto"
+                />
               </Link>
               <button
                 onClick={() => setIsMenuOpen(false)}
@@ -223,7 +232,7 @@ export default function Header() {
             <div className="p-6 border-t border-border">
               <Link
                 href="/contact"
-                className="block text-center text-[11px] tracking-[0.12em] uppercase !text-white bg-text border border-white/20 py-4 font-medium hover:bg-text/80 transition-colors"
+                className="block text-center text-[11px] tracking-[0.12em] uppercase text-white! bg-text border border-white/20 py-4 font-medium hover:bg-text/80 transition-colors"
               >
                 Start a Project
               </Link>

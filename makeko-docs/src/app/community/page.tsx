@@ -51,93 +51,21 @@ export default function CommunityPage() {
           </motion.p>
         </div>
       </section>
-
-      {/* Youth Empowerment */}
-      <Section className="pt-0">
-        <Card className="overflow-hidden">
-          <div className="grid lg:grid-cols-2 gap-0">
-            <div className="relative h-64 lg:h-auto overflow-hidden">
-              <img
-                src="/Community/Picture6.jpg"
-                alt="Youth empowerment"
-                className="w-full h-full object-cover community-soft-image"
-              />
-            </div>
-            <div className="p-8 lg:p-10">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-3 bg-primary/10 rounded-md">
-                  <Users size={28} className="text-primary" />
-                </div>
-                <h2 className="text-2xl font-semibold text-text">
-                  High School Outreach and Youth Empowerment
-                </h2>
-              </div>
-              <p className="text-text-muted leading-relaxed mb-6">
-                At Makeko Interiors, youth empowerment is essential for building stronger communities and shaping the future of the built environment.
-              </p>
-              <p className="text-text-muted leading-relaxed mb-6">
-                The studio actively engages with young learners to encourage them to pursue careers in design, architecture, and construction.
-              </p>
-              <p className="text-text-muted leading-relaxed mb-6">
-                As part of this commitment, Makeko Interiors visited SJ Van Der Merwe Technical High School in Limpopo to engage with technical learners and 
-                share insights about opportunities within the built environment industry.
-              </p>
-              <p className="text-text-muted leading-relaxed mb-6">
-                Through mentorship and career guidance initiatives, the studio aims to inspire the next generation of designers and innovators.
-              </p>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="p-4 bg-surface rounded-md border border-border">
-                  <div className="flex items-start gap-3">
-                    <GraduationCap size={20} className="text-primary mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-sm font-semibold text-text mb-1">
-                        School Outreach
-                      </h3>
-                      <p className="text-sm text-text-muted">
-                        Visited SJ Van Der Merwe Technical High School in Limpopo to
-                        engage with technical learners about opportunities in the
-                        built environment industry.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-4 bg-surface rounded-md border border-border">
-                  <div className="flex items-start gap-3">
-                    <Heart size={20} className="text-primary mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-sm font-semibold text-text mb-1">
-                        Mentorship & Guidance
-                      </h3>
-                      <p className="text-sm text-text-muted">
-                        Providing mentorship and career guidance initiatives to inspire
-                        the next generation of designers and innovators.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Card>
-      </Section>
-
-      {/* Media Spotlight */}
+{/* Media Spotlight */}
       <Section>
         <Card className="overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-0">
-            <div className="p-8 lg:p-10 order-2 lg:order-1">
+            <div className="p-5 sm:p-8 lg:p-10 order-2 lg:order-1">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-3 bg-secondary/10 rounded-md">
-                  <Tv size={28} className="text-secondary" />
+                <div className="p-2.5 bg-secondary/10 rounded-md shrink-0">
+                  <Tv size={22} className="text-secondary" />
                 </div>
                 <Badge variant="primary">Media Feature</Badge>
               </div>
-              <h2 className="text-2xl font-semibold text-text mb-4">
+              <h2 className="text-xl lg:text-2xl font-semibold text-text mb-3">
                 Media Spotlight
               </h2>
-              <h3 className="text-xl font-semibold text-text mb-4">
+              <h3 className="text-base lg:text-xl font-semibold text-text mb-4">  
                 SABC 3 Feature – 48 Hours
               </h3>
               <p className="text-text-muted leading-relaxed mb-6">
@@ -172,11 +100,11 @@ export default function CommunityPage() {
                 the built environment.
               </p>
             </div>
-            <div className="relative h-64 lg:h-auto overflow-hidden order-1 lg:order-2">
+            <div className="relative h-56 lg:h-auto overflow-hidden order-1 lg:order-2">
               <img
-                src="/Community/Picture7.jpg"
+                src="/Spotlight.png"
                 alt="SABC 3 Feature"
-                className="w-full h-full object-cover community-soft-image"
+                className="w-full h-full object-cover"
               />
               <div className="absolute bottom-4 left-4 right-4">
                 <div className="p-4 bg-surface/90 backdrop-blur-sm rounded-md border border-border">
@@ -193,8 +121,80 @@ export default function CommunityPage() {
           </div>
         </Card>
       </Section>
+      {/* Youth Empowerment */}
+      <Section className="pt-0">
+        <Card className="overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-0">
+            <div className="relative h-56 lg:h-auto overflow-hidden">
+              <img
+                src="/Community/Picture6.jpg"
+                alt="Youth empowerment"
+                className="w-full h-full object-cover object-top community-soft-image"
+              />
+            </div>
+            <div className="p-5 sm:p-8 lg:p-10">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="p-2.5 bg-primary/10 rounded-md shrink-0 mt-0.5">
+                  <Users size={22} className="text-primary" />
+                </div>
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold text-text">
+                  High School Outreach and Youth Empowerment
+                </h2>
+              </div>
+              <p className="text-text-muted leading-relaxed mb-6">
+                At Makeko Interiors, youth empowerment is essential for building stronger communities and shaping the future of the built environment.
+              </p>
+              <p className="text-text-muted leading-relaxed mb-6">
+                The studio actively engages with young learners to encourage them to pursue careers in design, architecture, and construction.
+              </p>
+              <p className="text-text-muted leading-relaxed mb-6">
+                As part of this commitment, Makeko Interiors visited SJ Van Der Merwe Technical High School in Limpopo to engage with technical learners and 
+                share insights about opportunities within the built environment industry.
+              </p>
+              <p className="text-text-muted leading-relaxed mb-6">
+                Through mentorship and career guidance initiatives, the studio aims to inspire the next generation of designers and innovators.
+              </p>
 
-      {/* Impact Stats */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="p-4 bg-surface rounded-md border border-border">
+                  <div className="flex items-start gap-3">
+                    <GraduationCap size={20} className="text-primary mt-0.5 shrink-0" />
+                    <div>
+                      <h3 className="text-sm font-semibold text-text mb-1">
+                        School Outreach
+                      </h3>
+                      <p className="text-sm text-text-muted">
+                        Visited SJ Van Der Merwe Technical High School in Limpopo to
+                        engage with technical learners about opportunities in the
+                        built environment industry.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-surface rounded-md border border-border">
+                  <div className="flex items-start gap-3">
+                    <Heart size={20} className="text-primary mt-0.5 shrink-0" />
+                    <div>
+                      <h3 className="text-sm font-semibold text-text mb-1">
+                        Mentorship & Guidance
+                      </h3>
+                      <p className="text-sm text-text-muted">
+                        Providing mentorship and career guidance initiatives to inspire
+                        the next generation of designers and innovators.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </Section>
+
+      
+
+      {/* Impact Stats
       <Section>
         <Card>
           <div className="mb-8">
@@ -250,7 +250,7 @@ export default function CommunityPage() {
             ))}
           </div>
         </Card>
-      </Section>
+      </Section> */}
 
       {/* Testimonial/Quote Section */}
       <Section className="pb-8">

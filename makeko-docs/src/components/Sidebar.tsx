@@ -79,10 +79,12 @@ export default function Sidebar() {
           {/* Brand */}
           <div className="p-6 border-b border-border">
             <Link href="/" className="block">
-              <h1 className="text-lg font-semibold text-text tracking-tight">
-                Makeko Interiors
-              </h1>
-              <p className="text-xs text-text-dim mt-1">
+              <img
+                src="/Logo.png"
+                alt="Makeko Interiors"
+                className="h-12 w-auto mb-2"
+              />
+              <p className="text-xs text-text-dim">
                 Technical Design Studio
               </p>
             </Link>

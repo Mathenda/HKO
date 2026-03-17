@@ -207,7 +207,7 @@ export default function HomePage() {
       </section>
 
       {/*  About Makeko Interiors  */}
-      <section id="about" className="mb-24">
+      <section id="about" className="mb-24 scroll-mt-18">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}

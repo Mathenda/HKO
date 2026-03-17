@@ -95,7 +95,7 @@ const services = {
       "Procurement and project costing",
       "Project management and installation",
     ],
-    image: "/Media-spotlight.png",
+    image: "/Office/Office1/Office Mgibba 1.png",
   },
 };
 
@@ -114,7 +114,7 @@ export default function ServicesPage() {
         <div
           className="hero-bg-image"
           style={{
-            backgroundImage: `url(/Office/Office1/Office Mgibba 1.png)`,
+            backgroundImage: `url('/Office/Office1/Office Mgibba 1.png')`,
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">

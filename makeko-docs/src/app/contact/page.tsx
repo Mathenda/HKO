@@ -66,7 +66,7 @@ export default function ContactPage() {
         <div
           className="hero-bg-image"
           style={{
-            backgroundImage: `url(/Office/Office4/Consultation 2.png)`,
+            backgroundImage: `url('/Office/Office4/Consultation 2.png')`,
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">
@@ -327,12 +327,11 @@ export default function ContactPage() {
         </div>
       </Section>
 
-      {/* Map Placeholder */}
       <Section>
         <Card className="overflow-hidden p-0">
           <div className="relative h-80 bg-surface">
             <img
-              src="/Community/Picture8.jpg"
+              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1600&q=80"
               alt="Map location"
               className="w-full h-full object-cover opacity-50"
             />
@@ -340,7 +339,7 @@ export default function ContactPage() {
               <div className="text-center">
                 <MapPin size={48} className="text-primary mx-auto mb-3" />
                 <p className="text-text font-medium">Johannesburg, South Africa</p>
-                <p className="text-text-dim text-sm">Available for projects nationwide</p>
+                <p className="text-sm text-black">Available for projects nationwide</p>
               </div>
             </div>
           </div>

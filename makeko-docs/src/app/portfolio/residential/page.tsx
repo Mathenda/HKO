@@ -66,7 +66,7 @@ export default function ResidentialPortfolioPage() {
         <div
           className="hero-bg-image"
           style={{
-            backgroundImage: `url(/Residential/Residential1/ResidentialA (6).jpg)`,
+            backgroundImage: `url('/Residential/Residential1/ResidentialA (6).jpg')`,
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">
