@@ -100,20 +100,18 @@ export default function CommunityPage() {
                 the built environment.
               </p>
             </div>
-            <div className="relative h-56 lg:h-auto overflow-hidden order-1 lg:order-2">
+            <div className="overflow-hidden order-1 lg:order-2">
               <img
                 src="/Spotlight.png"
                 alt="SABC 3 Feature"
-                className="w-full h-full object-cover"
+                className="w-full h-auto block"
               />
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="p-4 bg-surface/90 backdrop-blur-sm rounded-md border border-border">
-                  <div className="flex items-center gap-3">
-                    <Tv size={24} className="text-secondary" />
-                    <div>
-                      <p className="text-sm font-semibold text-text">SABC 3</p>
-                      <p className="text-xs text-text-dim">48 Hours Program • Episode 5 • 2020</p>
-                    </div>
+              <div className="p-4 border-t border-border bg-surface/90">
+                <div className="flex items-center gap-3">
+                  <Tv size={20} className="text-secondary shrink-0" />
+                  <div>
+                    <p className="text-sm font-semibold text-text">SABC 3</p>
+                    <p className="text-xs text-text-dim">48 Hours Program • Episode 5 • 2020</p>
                   </div>
                 </div>
               </div>
@@ -125,11 +123,11 @@ export default function CommunityPage() {
       <Section className="pt-0">
         <Card className="overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-0">
-            <div className="relative h-56 lg:h-auto overflow-hidden">
+            <div className="overflow-hidden">
               <img
                 src="/Community/Picture6.jpg"
                 alt="Youth empowerment"
-                className="w-full h-full object-cover object-top community-soft-image"
+                className="w-full h-auto block community-soft-image"
               />
             </div>
             <div className="p-5 sm:p-8 lg:p-10">

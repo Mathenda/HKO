@@ -28,7 +28,7 @@ const qualifications = [
   },
   {
     year: "Current",
-    qualification: "Postgraduate in Interior Design",
+    qualification: "Postgraduate in Art, Design, and Architecture",
     institution: "University of Johannesburg",
   },
   {
@@ -96,7 +96,7 @@ export default function FounderPage() {
               </p>
               <p className="text-text-muted leading-relaxed mb-6">
                 She obtained her Interior Design qualification from Inscape Education Group in 2014 and is currently 
-                pursuing a Postgraduate qualification in Interior Design at the University of Johannesburg.
+                pursuing a Postgraduate qualification in  Art, Design, and Architecture at the University of Johannesburg.
               </p>
               
               <div className="mb-6">
