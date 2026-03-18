@@ -57,7 +57,7 @@ export default function Header() {
             {/* Brand */}
             <Link href="/" className="flex items-center" aria-label="Makeko Interiors">
               <Image
-                src="/Full-logo.png"
+                src="/clear-logo.png"
                 alt="Makeko Interiors"
                 width={180}
                 height={64}

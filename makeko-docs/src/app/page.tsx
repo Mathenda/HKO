@@ -1,6 +1,7 @@
 "use client";
 
 import Layout from "@/components/Layout";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Building2,
@@ -100,9 +101,9 @@ export default function HomePage() {
     <Layout>
 
       {/*  Hero  */}
-      <section className="-mx-6 lg:-mx-12 -mt-8 lg:-mt-12 mb-24 min-h-screen flex flex-col lg:flex-row">
-        {/* Text half */}
-        <div className="flex flex-col justify-center px-8 lg:px-16 py-32 pt-32 lg:pt-24 bg-background w-full lg:w-1/2">
+      <section className="-mx-6 lg:-mx-12 -mt-8 lg:-mt-12 mb-24 h-[520px] lg:h-[calc(100vh-72px)] max-h-[780px] flex flex-col lg:flex-row">
+        {/* Text section */}
+        <div className="flex flex-col justify-center px-8 lg:px-16 py-16 bg-background w-full lg:w-2/5 shrink-0">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -116,25 +117,18 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-            className="text-[clamp(3.5rem,6vw,6rem)] font-light text-text leading-[0.94] tracking-tight mb-8"
+            className="text-[clamp(2.6rem,3.8vw,4.2rem)] font-light text-text leading-[1.05] tracking-tight mb-10"
           >
-            Makeko
+            “Where vision becomes
             <br />
-            Interiors
+            a signature space.”
           </motion.h1>
-
-          <motion.div
-            initial={{ scaleX: 0, originX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="w-8 h-px bg-border mb-8"
-          />
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-text-muted text-sm max-w-xs leading-relaxed mb-12"
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="text-text-muted text-sm max-w-xs leading-relaxed mb-10"
           >
             A forward-thinking interior design studio dedicated to delivering
             technically sound, creative, and functional interior environments.
@@ -143,8 +137,8 @@ export default function HomePage() {
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.65 }}
-            className="flex flex-wrap gap-2"
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="flex flex-wrap gap-3"
           >
             <Link href="/portfolio">
               <button className="inline-flex items-center gap-3 px-7 py-3.5 bg-text text-background text-[11px] tracking-[0.12em] uppercase font-medium hover:bg-text/80 transition-colors duration-200">
@@ -160,12 +154,16 @@ export default function HomePage() {
           </motion.div>
         </div>
 
-        {/* Image half */}
-        <div className="hidden lg:block relative flex-1 overflow-hidden min-h-full">
-          <img
-            src="\Retail\Retail4\Picture36.jpg"
+        {/* Image section — 60% */}
+        <div className="hidden lg:block relative flex-1 overflow-hidden">
+          <Image
+            src="/Residential/Residential1/ResidentialA (5).jpg"
             alt="Interior space"
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            className="object-cover"
+            priority
+            quality={100}
+            sizes="(min-width: 1024px) 60vw, 100vw"
           />
         </div>
       </section>
@@ -215,41 +213,22 @@ export default function HomePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="label-caps mb-4">About Makeko Interiors</p>
-            <h2 className="text-4xl lg:text-5xl font-light text-text mb-6 leading-tight tracking-tight">
+            <h2 className="text-5xl lg:text-6xl font-light text-text mb-6 leading-tight tracking-tight">
               Design innovation meets<br />technical expertise
             </h2>
             <div className="w-8 h-px bg-border mb-8" />
             <p className="text-text-muted leading-relaxed mb-6 font-light text-sm lg:text-base">
-              Makeko Interiors is a forward-thinking interior design studio dedicated to delivering technically sound, creative, and functional 
-              interior environments.
+              Makeko Interiors is a forward-thinking interior design studio dedicated to delivering technically sound, creative, and functional interior environments.
             </p>
             <p className="text-text-muted leading-relaxed mb-6 font-light text-sm lg:text-base">
-              Founded in 2018 by Mosa Dineo Makgoka, the studio combines design innovation, technical expertise, and strategic problem
-              solving to create spaces that are visually compelling and highly functional.
+              Founded in 2018 by Mosa Dineo Makgoka, the studio combines design innovation, technical expertise, and strategic problem solving to create spaces that are visually compelling and highly functional.
             </p>
             <p className="text-text-muted leading-relaxed mb-6 font-light text-sm lg:text-base">
-              Makeko Interiors approaches every project with a balance of creativity and precision, ensuring that every detail — from spatial 
-              planning to material specification — is carefully considered and expertly executed.
+              Makeko Interiors approaches every project with a balance of creativity and precision, ensuring that every detail — from spatial planning to material specification — is carefully considered and expertly executed.
             </p>
             <p className="text-text-muted leading-relaxed mb-6 font-light text-sm lg:text-base">
-              The studio collaborates closely with clients, architects, engineers, and contractors to translate ideas into spaces that meet 
-              operational, aesthetic, and regulatory requirements.
+              The studio collaborates closely with clients, architects, engineers, and contractors to translate ideas into spaces that meet operational, aesthetic, and regulatory requirements.
             </p>
-            <div className="mt-8 p-6 bg-surface border border-border rounded-md">
-              <p className="text-sm font-semibold text-text mb-4">The practice focuses strongly on:</p>
-              <ul className="space-y-2">
-                {["Technical detailing", "Design documentation", "Creative spatial solutions"].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 bg-text-dim shrink-0" />
-                    <span className="text-text-muted text-sm font-light">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-text-muted text-sm font-light leading-relaxed mt-4">
-                allowing projects to move seamlessly from concept development to construction implementation.
-              </p>
-            </div>
           </motion.div>
 
           <motion.div
@@ -257,61 +236,72 @@ export default function HomePage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="relative h-125 overflow-hidden"
+            className="relative overflow-hidden"
           >
-            <img
-              src="/Residential/Residential1/ResidentialA (6).jpg"
+            <Image
+              src="/Residential/Residential1/ResidentialA (9).png"
               alt="Modern interior design"
-              className="w-full h-full object-cover"
+              width={1200}
+              height={900}
+              className="w-full h-auto"
+              quality={100}
+              sizes="(min-width: 1024px) 50vw, 100vw"
             />
           </motion.div>
         </div>
       </section>
 
       {/*  Our Approach  */}
-      <section className="mb-24 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="label-caps mb-4">Our Philosophy</p>
-          <h2 className="text-4xl lg:text-5xl font-light text-text mb-6 leading-tight tracking-tight">
-            Where precision meets<br />creative vision
-          </h2>
-          <div className="w-8 h-px bg-border mb-8" />
-          <p className="text-text-muted leading-relaxed mb-8 font-light text-sm lg:text-base">
-            We approach every project with a balance of creativity and precision,
-            ensuring that every detail  from spatial planning to material specification
-            is carefully considered and expertly executed.
-          </p>
-          <ul className="space-y-4">
-            {[
-              "Creative spatial solutions tailored to your needs",
-              "Technical precision in every detail",
-              "Seamless collaboration from concept to completion",
-              "Buildability and practical implementation focus",
-            ].map((item) => (
-              <li key={item} className="flex items-center gap-4">
-                <span className="w-1.5 h-1.5 bg-text-dim shrink-0" />
-                <span className="text-text-muted text-sm font-light leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
+      <section className="-mx-6 lg:-mx-12 mb-24 flex flex-col lg:flex-row min-h-[700px]">
+        {/* Text panel — ~55% */}
+        <div className="flex items-center w-full lg:w-[55%] shrink-0 bg-background px-8 lg:px-16 py-16">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="label-caps mb-4">Our Philosophy</p>
+            <h2 className="text-4xl lg:text-5xl font-light text-text mb-6 leading-tight tracking-tight">
+              Where precision meets<br />creative vision
+            </h2>
+            <div className="w-8 h-px bg-border mb-8" />
+            <p className="text-text-muted leading-relaxed mb-8 font-light text-sm lg:text-base">
+              We approach every project with a balance of creativity and precision,
+              ensuring that every detail from spatial planning to material specification
+              is carefully considered and expertly executed.
+            </p>
+            <ul className="space-y-4">
+              {[
+                "Creative spatial solutions tailored to your needs",
+                "Technical precision in every detail",
+                "Seamless collaboration from concept to completion",
+                "Buildability and practical implementation focus",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-4">
+                  <span className="w-1.5 h-1.5 bg-text-dim shrink-0" />
+                  <span className="text-text-muted text-sm font-light leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
 
+        {/* Image — ~45%, fills full height */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="relative h-125 overflow-hidden"
+          className="relative flex-1 min-h-[400px] lg:min-h-0 overflow-hidden"
         >
-          <img
-            src="/Office/Office3/Vuna 2.png"
+          <Image
+            src="/Residential/Residential1/ResidentialA (2).jpg"
             alt="Modern interior design"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            quality={100}
+            sizes="(min-width: 1024px) 45vw, 100vw"
           />
         </motion.div>
       </section>
@@ -376,20 +366,55 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="gallery-mosaic -mx-6 lg:-mx-12">
-          <div className="gallery-cell-tall">
-            <img src="/Residential/Residential1/ResidentialA (2).jpg" alt="Interior design project" />
+          <div className="gallery-cell-tall relative">
+            <Image
+              src="/Residential/Residential1/ResidentialA (2).jpg"
+              alt="Interior design project"
+              fill
+              className="object-cover"
+              quality={100}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            />
           </div>
-          <div>
-            <img src="/Office/Office4/Consultation 2.png" alt="Office interior" />
+          <div className="relative">
+            <Image
+              src="/Office/Office4/Consultation 2.png"
+              alt="Office interior"
+              fill
+              className="object-cover"
+              quality={100}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            />
           </div>
-          <div>
-            <img src="/Retail/Retail4/Picture35.jpg" alt="Interior concept" />
+          <div className="relative">
+            <Image
+              src="/Retail/Retail4/Picture35.jpg"
+              alt="Interior concept"
+              fill
+              className="object-cover"
+              quality={100}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            />
           </div>
-          <div>
-            <img src="/Health/Health2/Picture43.png" alt="Kitchen design" />
+          <div className="relative">
+            <Image
+              src="/Health/Health2/Picture43.png"
+              alt="Kitchen design"
+              fill
+              className="object-cover"
+              quality={100}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            />
           </div>
-          <div>
-            <img src="/Health/Health1/Picture41.png" alt="Healthcare interior" />
+          <div className="relative">
+            <Image
+              src="/Health/Health1/Picture41.png"
+              alt="Healthcare interior"
+              fill
+              className="object-cover"
+              quality={100}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            />
           </div>
         </div>
       </section>
@@ -411,10 +436,13 @@ export default function HomePage() {
             >
               <Link href={sector.href}>
                 <div className="group relative h-96 overflow-hidden cursor-pointer">
-                  <img
+                  <Image
                     src={sector.image}
                     alt={sector.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    quality={100}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                   <div
                     className="absolute inset-0 transition-opacity duration-300"
@@ -501,10 +529,13 @@ export default function HomePage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative h-120 overflow-hidden"
           >
-            <img
+            <Image
                 src="/Office/Office5/Consult 2.png"
               alt="Beautiful interior space"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              quality={100}
+              sizes="(min-width: 1024px) 50vw, 100vw"
             />
           </motion.div>
         </div>
