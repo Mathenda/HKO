@@ -296,11 +296,10 @@ export default function HomePage() {
           className="relative flex-1 min-h-[400px] lg:min-h-0 overflow-hidden"
         >
           <Image
-            src="/Residential/Residential1/ResidentialA (2).jpg"
+            src="https://qiqe4rknb11or570.public.blob.vercel-storage.com/Residential/Residential1/ResidentialA (2).jpg"
             alt="Modern interior design"
             fill
             className="object-cover"
-            quality={100}
             sizes="(min-width: 1024px) 45vw, 100vw"
           />
         </motion.div>

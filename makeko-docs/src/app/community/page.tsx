@@ -1,6 +1,7 @@
 "use client";
 
 import Layout from "@/components/Layout";
+import { blobUrl } from "@/config/site";
 import { Card, Section, Badge } from "@/components/ui";
 import { motion } from "framer-motion";
 import {
@@ -22,7 +23,7 @@ export default function CommunityPage() {
         <div
           className="hero-bg-image community-hero-bg-image"
           style={{
-            backgroundImage: `url(/Community/Picture5.jpg)`,
+            backgroundImage: `url(${blobUrl("/Community/Picture5.jpg")})`,  
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">

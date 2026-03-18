@@ -1,6 +1,7 @@
 "use client";
 
 import Layout from "@/components/Layout";
+import { blobUrl } from "@/config/site";
 import { Card, Section, Badge } from "@/components/ui";
 import { motion } from "framer-motion";
 import { Building2, Store, Heart, Home, ArrowRight, Grid3X3, MapPin, Calendar } from "lucide-react";
@@ -73,7 +74,7 @@ export default function PortfolioPage() {
         <div
           className="hero-bg-image"
           style={{
-            backgroundImage: `url(/Office/Office1/Picture9.png)`,
+            backgroundImage: `url(${blobUrl("/Office/Office1/Picture9.png")})`,  
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">

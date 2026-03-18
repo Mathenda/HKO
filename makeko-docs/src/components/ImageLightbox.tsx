@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { MouseEvent, useEffect } from "react";
+import { blobUrl } from "@/config/site";
 
 interface ImageLightboxProps {
   src: string | null;
@@ -55,7 +56,7 @@ export default function ImageLightbox({ src, alt, onClose }: ImageLightboxProps)
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.98, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              src={src}
+              src={src.startsWith("http") ? src : blobUrl(src)}
               alt={alt}
               className="h-auto w-auto max-h-[98vh] max-w-[98vw] object-contain"
               onClick={(event: MouseEvent<HTMLImageElement>) => event.stopPropagation()}

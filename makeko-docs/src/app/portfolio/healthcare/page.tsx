@@ -7,6 +7,7 @@ import { Heart, ArrowLeft, MapPin, Calendar, Maximize2 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import ImageLightbox from "@/components/ImageLightbox";
+import { blobUrl } from "@/config/site";
 
 const projects = [
   {
@@ -65,7 +66,7 @@ export default function HealthcarePortfolioPage() {
         <div
           className="hero-bg-image"
           style={{
-            backgroundImage: `url(/Health/Health1/Picture41.png)`,
+            backgroundImage: `url(${blobUrl("/Health/Health1/Picture41.png")})`,  
           }}
         />
         <div className="relative z-10 text-center max-w-4xl mx-auto pt-20">

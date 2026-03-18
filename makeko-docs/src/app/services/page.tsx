@@ -18,6 +18,8 @@ import {
   Clock,
 } from "lucide-react";
 import Link from "next/link";
+import { blobUrl } from "@/config/site";
+
 
 const services = {
   concept: {
@@ -82,7 +84,7 @@ const services = {
       "Wardrobes",
       "Furniture design and manufacturing",
     ],
-    image: "/Residential/Residential1/ResidentialA (6).jpg",
+    image: blobUrl("/Residential/Residential1/ResidentialA (9).png"),
   },
   styling: {
     name: "Styling & Installation",
