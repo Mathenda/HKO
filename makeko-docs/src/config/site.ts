@@ -1,4 +1,4 @@
-const BLOB = process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? "";
+const BLOB = "https://qiqe4rknb11or570.public.blob.vercel-storage.com";
 export const blobUrl = (path: string) => `${BLOB}${path}`;
 
 // Site configuration
