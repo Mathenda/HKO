@@ -26,7 +26,7 @@ const contactMethods = [
   {
     icon: Mail,
     title: "Email",
-    value: "info@makekointeriors.co.za",
+    value: "letschat@makekointeriors.co.za",
     description: "General inquiries",
     color: "secondary",
   },
@@ -47,16 +47,48 @@ const contactMethods = [
 ];
 
 export default function ContactPage() {
-  const [formState, setFormState] = useState<"idle" | "submitting" | "success">(
+  const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">(
     "idle"
   );
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormState("submitting");
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setFormState("success");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setFormState("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setFormState("error");
+    }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
   return (
@@ -137,6 +169,29 @@ export default function ContactPage() {
                     Send another message
                   </button>
                 </motion.div>
+              ) : formState === "error" ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.2 }}
+                  className="text-center py-12"
+                >
+                  <div className="inline-flex p-4 bg-red-100 rounded-full mb-4">
+                    <CheckCircle2 size={48} className="text-red-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-text mb-2">
+                    Something went wrong
+                  </h3>
+                  <p className="text-text-muted">
+                    Please try again or contact us directly.
+                  </p>
+                  <button
+                    onClick={() => setFormState("idle")}
+                    className="mt-6 text-primary hover:text-primary-muted text-sm font-medium"
+                  >
+                    Try again
+                  </button>
+                </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-4">
@@ -150,6 +205,8 @@ export default function ContactPage() {
                       <input
                         type="text"
                         id="name"
+                        value={formData.name}
+                        onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-surface border border-border rounded-md text-text placeholder-text-dim focus:outline-none focus:border-primary transition-colors"
                         placeholder="Your name"
@@ -165,6 +222,8 @@ export default function ContactPage() {
                       <input
                         type="email"
                         id="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-surface border border-border rounded-md text-text placeholder-text-dim focus:outline-none focus:border-primary transition-colors"
                         placeholder="your@email.com"
@@ -182,6 +241,8 @@ export default function ContactPage() {
                     <input
                       type="text"
                       id="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-surface border border-border rounded-md text-text placeholder-text-dim focus:outline-none focus:border-primary transition-colors"
                       placeholder="Project inquiry"
@@ -197,6 +258,8 @@ export default function ContactPage() {
                     </label>
                     <textarea
                       id="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       required
                       rows={5}
                       className="w-full px-4 py-3 bg-surface border border-border rounded-md text-text placeholder-text-dim focus:outline-none focus:border-primary transition-colors resize-none"
@@ -369,7 +432,7 @@ export default function ContactPage() {
                 Call Us
               </a>
               <a
-                href="mailto:info@makekointeriors.co.za"
+                href="mailto:letschat@makekointeriors.co.za"
                 className="inline-flex items-center px-6 py-3 border border-border text-text font-medium rounded-md hover:bg-surface-hover transition-colors"
               >
                 <Mail size={18} className="mr-2" />
