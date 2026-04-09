@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: process.env.FROM_EMAIL || "Makeko Interiors <onboarding@resend.dev>",
+      from: process.env.FROM_EMAIL || "Makeko Interiors <letschat@makekointeriors.co.za>",
       to: ["mosa.dineo27@gmail.com"],
       replyTo: email,
       subject: `Contact Form: ${subject}`,
