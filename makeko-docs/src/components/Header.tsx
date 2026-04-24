@@ -143,7 +143,7 @@ export default function Header() {
                 href="/contact"
                 className="hidden lg:inline-flex items-center px-5 py-2.5 bg-text text-white! border border-white/20 text-[10px] tracking-[0.12em] uppercase font-medium hover:bg-text/80 transition-colors duration-200"
               >
-                Start a Project
+                Contact Us
               </Link>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -234,7 +234,7 @@ export default function Header() {
                 href="/contact"
                 className="block text-center text-[11px] tracking-[0.12em] uppercase text-white! bg-text border border-white/20 py-4 font-medium hover:bg-text/80 transition-colors"
               >
-                Start a Project
+                Contact Us
               </Link>
             </div>
           </motion.div>

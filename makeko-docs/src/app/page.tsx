@@ -597,7 +597,7 @@ export default function HomePage() {
 
       {/*  CTA  */}
       <section className="-mx-6 lg:-mx-12 mt-24 bg-text px-8 lg:px-16 py-24">
-        <p className="label-caps text-white mb-8">Start A Project</p>
+        <p className="label-caps text-white mb-8">Contact Us</p>
         <h3 className="text-5xl lg:text-6xl font-light text-background mb-6 leading-tight tracking-tight">
           Let&apos;s create<br />beautiful spaces.
         </h3>
