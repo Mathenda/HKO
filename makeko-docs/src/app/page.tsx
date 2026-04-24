@@ -157,7 +157,7 @@ export default function HomePage() {
         {/* Image section — 60% */}
         <div className="hidden lg:block relative flex-1 overflow-hidden">
           <Image
-            src="/Residential/Residential1/ResidentialA (5).jpg"
+            src="/Residential/Residential1/upscale.png"
             alt="Interior space"
             fill
             className="object-cover"
