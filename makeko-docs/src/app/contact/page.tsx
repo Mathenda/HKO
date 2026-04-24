@@ -26,7 +26,7 @@ const contactMethods = [
   {
     icon: Mail,
     title: "Email",
-    value: "letschat@makekointeriors.co.za",
+    value: "sales@makekointeriors.co.za",
     description: "General inquiries",
     color: "secondary",
   },
@@ -432,7 +432,7 @@ export default function ContactPage() {
                 Call Us
               </a>
               <a
-                href="mailto:letschat@makekointeriors.co.za"
+                href="mailto:sales@makekointeriors.co.za"
                 className="inline-flex items-center px-6 py-3 border border-border text-text font-medium rounded-md hover:bg-surface-hover transition-colors"
               >
                 <Mail size={18} className="mr-2" />
