@@ -27,8 +27,8 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: process.env.FROM_EMAIL || "Makeko Interiors <sales@makekointeriors.co.za>",
-      to: [process.env.TO_EMAIL || "sales@makekointeriors.co.za"],
+      from: process.env.FROM_EMAIL || "Makeko Interiors <letschat@makekointeriors.co.za>",
+      to: [process.env.TO_EMAIL || "letschat@makekointeriors.co.za"],
       replyTo: email,
       subject: `Contact Form: ${subject}`,
       html: `
