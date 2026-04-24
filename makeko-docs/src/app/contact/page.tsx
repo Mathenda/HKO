@@ -442,6 +442,15 @@ export default function ContactPage() {
           </div>
         </Card>
       </Section>
+      {/* Footer */}
+      <footer className="py-6 text-center">
+        <p className="text-xs text-text-dim">
+          Website by:{" "}
+          <a href="mailto:mathendam@gmail.com" className="hover:text-text-muted transition-colors">
+            mathendam@gmail.com
+          </a>
+        </p>
+      </footer>
     </Layout>
   );
 }

@@ -2,8 +2,8 @@
 
 import Layout from "@/components/Layout";
 import { Card, Section, Badge } from "@/components/ui";
-import { motion, AnimatePresence } from "framer-motion";
-import { Building2, ArrowLeft, MapPin, Calendar, Maximize2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { Building2, ArrowLeft, MapPin, Calendar, Maximize2, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import ImageLightbox from "@/components/ImageLightbox";
@@ -79,8 +79,10 @@ const projects = [
 ];
 
 export default function OfficePortfolioPage() {
-  const [openProject, setOpenProject] = useState<string | null>(null);
-  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+  const [lightbox, setLightbox] = useState<{ images: string[]; index: number; alt: string } | null>(null);
+  const [carouselIndex, setCarouselIndex] = useState<Record<string, number>>({});
+  const getIdx = (name: string) => carouselIndex[name] ?? 0;
+  const setIdx = (name: string, i: number) => setCarouselIndex(prev => ({ ...prev, [name]: i }));
 
   return (
     <Layout>
@@ -143,19 +145,53 @@ export default function OfficePortfolioPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
             >
-              <Card className="overflow-hidden group h-full">
-                <button
-                  type="button"
-                  onClick={() => setSelectedImage({ src: project.images[0], alt: project.name })}
-                  className="relative h-56 overflow-hidden w-full text-left cursor-zoom-in"
-                  aria-label={`Open ${project.name} image fullscreen`}
-                >
-                  <img
-                    src={project.images[0]}
+              <Card className="overflow-hidden h-full p-0">
+                <div className="relative h-56 overflow-hidden">
+                  <motion.img
+                    key={getIdx(project.name)}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.2 }}
+                    src={project.images[getIdx(project.name)]}
                     alt={project.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover cursor-zoom-in"
+                    onClick={() => setLightbox({ images: project.images, index: getIdx(project.name), alt: project.name })}
                   />
-                </button>
+                  {project.images.length > 1 && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => setIdx(project.name, (getIdx(project.name) - 1 + project.images.length) % project.images.length)}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors"
+                        aria-label="Previous image"
+                      >
+                        <ChevronLeft size={16} />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setIdx(project.name, (getIdx(project.name) + 1) % project.images.length)}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors"
+                        aria-label="Next image"
+                      >
+                        <ChevronRight size={16} />
+                      </button>
+                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                        {project.images.map((_, i) => (
+                          <button
+                            key={i}
+                            type="button"
+                            onClick={() => setIdx(project.name, i)}
+                            className={`h-1.5 rounded-full transition-all duration-200 ${i === getIdx(project.name) ? "w-4 bg-white" : "w-1.5 bg-white/50"}`}
+                            aria-label={`Go to image ${i + 1}`}
+                          />
+                        ))}
+                      </div>
+                      <div className="absolute top-2 right-2 bg-black/40 text-white text-xs px-2 py-0.5 rounded-full pointer-events-none">
+                        {getIdx(project.name) + 1}/{project.images.length}
+                      </div>
+                    </>
+                  )}
+                </div>
                 <div className="p-5">
                   <h3 className="text-lg font-semibold text-text mb-2">
                     {project.name}
@@ -163,25 +199,6 @@ export default function OfficePortfolioPage() {
                   <p className="text-sm text-text-muted mb-4 leading-relaxed">
                     {project.description}
                   </p>
-
-                  <div className="grid grid-cols-3 gap-2 mb-4">
-                    {project.images.slice(0, 3).map((src) => (
-                      <button
-                        type="button"
-                        key={src}
-                        onClick={() => setSelectedImage({ src, alt: `${project.name} thumbnail` })}
-                        className="cursor-zoom-in"
-                        aria-label={`Open ${project.name} thumbnail fullscreen`}
-                      >
-                        <img
-                          src={src}
-                          alt={project.name}
-                          className="h-16 w-full object-cover rounded"
-                        />
-                      </button>
-                    ))}
-                  </div>
-
                   <div className="flex flex-wrap gap-3 text-xs text-text-dim">
                     <div className="flex items-center gap-1.5">
                       <MapPin size={14} className="text-primary" />
@@ -196,46 +213,6 @@ export default function OfficePortfolioPage() {
                       <span>{project.size}</span>
                     </div>
                   </div>
-
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setOpenProject(openProject === project.name ? null : project.name)
-                    }
-                    className="mt-4 w-full text-left text-xs font-medium text-primary hover:text-primary-muted transition-colors"
-                  >
-                    {openProject === project.name ? "Hide gallery" : "View gallery"}
-                  </button>
-
-                  <AnimatePresence>
-                    {openProject === project.name && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="grid grid-cols-2 gap-2 mt-4">
-                          {project.images.map((src) => (
-                            <button
-                              type="button"
-                              key={src}
-                              onClick={() => setSelectedImage({ src, alt: `${project.name} gallery` })}
-                              className="cursor-zoom-in"
-                              aria-label={`Open ${project.name} gallery image fullscreen`}
-                            >
-                              <img
-                                src={src}
-                                alt={`${project.name} gallery`}
-                                className="h-20 w-full object-cover rounded"
-                              />
-                            </button>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                 </div>
               </Card>
             </motion.div>
@@ -270,9 +247,12 @@ export default function OfficePortfolioPage() {
       </Section>
 
       <ImageLightbox
-        src={selectedImage?.src ?? null}
-        alt={selectedImage?.alt ?? "Office portfolio image"}
-        onClose={() => setSelectedImage(null)}
+        images={lightbox?.images ?? []}
+        index={lightbox?.index ?? null}
+        alt={lightbox?.alt ?? "Office portfolio image"}
+        onClose={() => setLightbox(null)}
+        onNext={() => setLightbox(prev => prev ? { ...prev, index: (prev.index + 1) % prev.images.length } : null)}
+        onPrev={() => setLightbox(prev => prev ? { ...prev, index: (prev.index - 1 + prev.images.length) % prev.images.length } : null)}
       />
     </Layout>
   );

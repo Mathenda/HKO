@@ -65,7 +65,7 @@ const sectors = [
 ];
 
 export default function PortfolioPage() {
-  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+  const [lightbox, setLightbox] = useState<{ images: string[]; index: number; alt: string } | null>(null);
 
   return (
     <Layout>
@@ -145,7 +145,7 @@ export default function PortfolioPage() {
               <div className="grid lg:grid-cols-2 gap-0">
                 <button
                   type="button"
-                  onClick={() => setSelectedImage({ src: sector.image, alt: `${sector.name} featured image` })}
+                  onClick={() => setLightbox({ images: [sector.image], index: 0, alt: `${sector.name} featured image` })}
                   className="relative h-64 lg:h-80 overflow-hidden group text-left w-full cursor-zoom-in"
                   aria-label={`Open ${sector.name} image fullscreen`}
                 >
@@ -239,9 +239,12 @@ export default function PortfolioPage() {
       </Section>
 
       <ImageLightbox
-        src={selectedImage?.src ?? null}
-        alt={selectedImage?.alt ?? "Portfolio image"}
-        onClose={() => setSelectedImage(null)}
+        images={lightbox?.images ?? []}
+        index={lightbox?.index ?? null}
+        alt={lightbox?.alt ?? "Portfolio image"}
+        onClose={() => setLightbox(null)}
+        onNext={() => setLightbox(prev => prev ? { ...prev, index: (prev.index + 1) % prev.images.length } : null)}
+        onPrev={() => setLightbox(prev => prev ? { ...prev, index: (prev.index - 1 + prev.images.length) % prev.images.length } : null)}
       />
     </Layout>
   );
